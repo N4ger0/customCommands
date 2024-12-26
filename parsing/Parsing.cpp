@@ -33,25 +33,45 @@ void Parsing::parseInput(int argc, char *argv[]) const {
 
     if (inputParts.empty()) {
         std::cout << "No command provided. Use 'help' for a list of commands." << std::endl;
+        return;
     }
 
-    const std::string &commandName = inputParts[0];
-    Command *command = findCommand(commandName);
+    std::vector<std::pair<Command*, std::vector<std::string>>> deferredCommands;
 
-    if (!command) {
-        throw std::runtime_error("Command not recognized: " + commandName);
+    for (size_t i = 0; i < inputParts.size(); ++i) {
+        const std::string &commandName = inputParts[i];
+
+        if (commandName.empty() || commandName[0] != '-') {
+            throw std::runtime_error("Invalid command syntax: " + commandName);
+        }
+
+        Command *command = findCommand(commandName);
+
+        if (!command) {
+            throw std::runtime_error("Command not recognized: " + commandName);
+        }
+
+        std::vector<std::string> args;
+        while (i + 1 < inputParts.size() && inputParts[i + 1][0] != '-') {
+            args.emplace_back(inputParts[++i]);
+        }
+
+        if (args.size() != command->isMandatoryCommand() &&
+            args.size() != command->isMandatoryCommand() + command->aliases().size()) {
+            throw std::runtime_error("Incorrect number of arguments for command: " + commandName);
+            }
+
+        command->setArguments(args);
+
+        if (command->executesNow()) {
+            command->execute();
+        } else {
+            deferredCommands.emplace_back(command, args);
+        }
     }
 
-    const std::vector<std::string> args(inputParts.begin() + 1, inputParts.end());
-
-    if (args.size() != command->isMandatoryCommand() && args.size() != command->isMandatoryCommand() + command->
-        aliases().size()) {
-        throw std::runtime_error("Incorrect number of arguments for command: " + commandName);
-    }
-
-    command->setArguments(args);
-
-    if (command->executesNow()) {
+    for (const auto& [command, args] : deferredCommands) {
+        command->setArguments(args);
         command->execute();
     }
 }
