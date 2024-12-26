@@ -64,4 +64,13 @@ public:
     void execute() override;
 };
 
+class MandatoryCommand : public Command {
+public:
+    MandatoryCommand();
+
+    void setArguments(const std::vector<std::string> &args) override;
+
+    void execute() override;
+};
+
 #endif //COMMAND_H

@@ -68,3 +68,16 @@ void FinishedCommand::setArguments(const std::vector<std::string> &args) {
         throw std::runtime_error("Help command does not take arguments.");
     }
 }
+
+MandatoryCommand::MandatoryCommand() : Command("mandatory", {"-m", "--mandatory"},
+                                                          0, "Mandatory command", true, true) {
+}
+
+void MandatoryCommand::execute() {
+}
+
+void MandatoryCommand::setArguments(const std::vector<std::string> &args) {
+    if (!args.empty()) {
+        throw std::runtime_error("Help command does not take arguments.");
+    }
+}
