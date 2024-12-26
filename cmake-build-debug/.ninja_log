@@ -43,3 +43,17 @@
 637	933	1735229566387450138	gtest/Google_Tests_run	4330c133fcf33d80
 5	1416	1735229616547273947	gtest/CMakeFiles/Google_Tests_run.dir/test1.cpp.o	9d1dc77c8102b42f
 1417	1725	1735229617959268996	gtest/Google_Tests_run	4330c133fcf33d80
+11	1127	1735230287760953798	gtest/CMakeFiles/commands.dir/__/commands/Command.cpp.o	b66ab03db410f0e6
+1127	1154	1735230288876949976	gtest/libcommands.a	d7d1c9e269caba2
+5	1368	1735230287752953825	gtest/CMakeFiles/parsing.dir/__/parsing/Parsing.cpp.o	db649e79265ed33a
+1368	1386	1735230289116949154	gtest/libparsing.a	fab2515c3e56cfe3
+11	2079	1735230287760953798	gtest/CMakeFiles/Google_Tests_run.dir/test1.cpp.o	9d1dc77c8102b42f
+2080	2384	1735230289828946716	gtest/Google_Tests_run	4330c133fcf33d80
+5	1346	1735230343328763620	gtest/CMakeFiles/Google_Tests_run.dir/test1.cpp.o	9d1dc77c8102b42f
+1347	1635	1735230344668759036	gtest/Google_Tests_run	4330c133fcf33d80
+5	936	1735230772951297710	gtest/CMakeFiles/commands.dir/__/commands/Command.cpp.o	b66ab03db410f0e6
+937	954	1735230773883294537	gtest/libcommands.a	d7d1c9e269caba2
+4	1331	1735230772951297710	gtest/CMakeFiles/parsing.dir/__/parsing/Parsing.cpp.o	db649e79265ed33a
+1333	1357	1735230774279293188	gtest/libparsing.a	fab2515c3e56cfe3
+5	1890	1735230772951297710	gtest/CMakeFiles/Google_Tests_run.dir/test1.cpp.o	9d1dc77c8102b42f
+1891	2223	1735230774839291281	gtest/Google_Tests_run	4330c133fcf33d80

@@ -19,7 +19,7 @@ TEST(TestCommand, TestDebutTraitement) {
 
     std::string output = testing::internal::GetCapturedStdout();
 
-    ASSERT_EQ(output, "Available commands :\n- help : Display this help message\n- finished : Display finished message at the end of the execution\n");
+    ASSERT_EQ(output, "Available commands :\n- help : Display this help message\n- finished : Display finished message at the end of the execution\n- mandatory : Mandatory command\n");
 
     delete parser;
 }
@@ -51,7 +51,7 @@ TEST(TestCommand, TestFinTraitement) {
 
     std::string output = testing::internal::GetCapturedStdout();
 
-    ASSERT_EQ(output, "Finished");
+    ASSERT_EQ(output, "Finished !");
 
     delete parser;
 }

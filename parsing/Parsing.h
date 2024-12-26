@@ -29,6 +29,8 @@ public:
 
     std::vector<std::string> allDescriptions() const;
 
+    bool checkMissingMandatory() const ;
+
     ~Parsing();
 };
 

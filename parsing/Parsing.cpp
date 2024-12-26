@@ -13,6 +13,7 @@
 Parsing::Parsing(const Target &targets) : commandsToParse(), targets(targets) {
     commandsToParse.push_back(new HelpCommand(*this));
     commandsToParse.push_back(new FinishedCommand());
+    commandsToParse.push_back(new MandatoryCommand());
 }
 
 std::vector<std::string> Parsing::allDescriptions() const {
@@ -105,6 +106,15 @@ void Parsing::addCommand(Command *command) {
     }
     commandsToParse.push_back(command);
 }
+
+bool Parsing::checkMissingMandatory() const {
+    for (auto *command: commandsToParse) {
+        if(command->isMandatoryCommand()) {
+
+        }
+    }
+}
+
 
 Parsing::~Parsing() {
     for (const auto *command: commandsToParse) {
