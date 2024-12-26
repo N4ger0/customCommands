@@ -1,0 +1,56 @@
+//
+// Created on 29/11/2024.
+// CAILLE
+// PAUL
+// M1 - CL
+//
+
+#include "Command.h"
+#include "../parsing/Parsing.h"
+
+#include <iostream>
+
+Command::Command(const std::string &name, const std::vector<std::string> &aliases, const size_t nbOfArguments,
+                 const std::string &description, const bool isMandatory, const bool activateImmediately) : c_name(name),
+    c_aliases(aliases), c_nbOfArguments(nbOfArguments)
+    , c_description(description), c_isMandatory(isMandatory), c_activateImmediately(activateImmediately) {
+}
+
+
+const std::string &Command::name() const {
+    return c_name;
+}
+
+const std::string &Command::description() const {
+    return c_description;
+}
+
+const std::vector<std::string> &Command::aliases() const {
+    return c_aliases;
+}
+
+bool Command::isMandatoryCommand() const {
+    return c_isMandatory;
+}
+
+bool Command::executesNow() const {
+    return c_activateImmediately;
+}
+
+HelpCommand::HelpCommand(const Parsing &parser) : Command("help", {"-h", "--help"},
+                                                          0, "Display this help message", false, true), parser(parser) {
+}
+
+void HelpCommand::execute() {
+    std::cout << "Available commands :\n";
+    const auto descriptions = parser.allDescriptions();
+    for (const auto &description: descriptions) {
+        std::cout << description << "\n";
+    }
+}
+
+void HelpCommand::setArguments(const std::vector<std::string> &args) {
+    if (!args.empty()) {
+        throw std::runtime_error("Help command does not take arguments.");
+    }
+}
