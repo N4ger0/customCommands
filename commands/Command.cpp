@@ -54,3 +54,17 @@ void HelpCommand::setArguments(const std::vector<std::string> &args) {
         throw std::runtime_error("Help command does not take arguments.");
     }
 }
+
+FinishedCommand::FinishedCommand() : Command("finished", {"-f", "--finished"},
+                                                          0, "Display finished message at the end of the execution", false, false) {
+}
+
+void FinishedCommand::execute() {
+    std::cout << "Finished !";
+}
+
+void FinishedCommand::setArguments(const std::vector<std::string> &args) {
+    if (!args.empty()) {
+        throw std::runtime_error("Help command does not take arguments.");
+    }
+}

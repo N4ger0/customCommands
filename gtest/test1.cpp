@@ -5,7 +5,7 @@
 #include "../target/Target.h"
 #include "../parsing/Parsing.h"
 
-TEST(TestCommand, TestHelp) {
+TEST(TestCommand, TestDebutTraitement) {
     testing::internal::CaptureStdout() ;
 
     Target target;
@@ -19,7 +19,7 @@ TEST(TestCommand, TestHelp) {
 
     std::string output = testing::internal::GetCapturedStdout();
 
-    ASSERT_EQ(output, "Available commands :\n- help : Display this help message\n");
+    ASSERT_EQ(output, "Available commands :\n- help : Display this help message\n- finished : Display finished message at the end of the execution\n");
 
     delete parser;
 }
@@ -31,11 +31,27 @@ TEST(TestCommand, TestInexistant) {
 
     char *arguments[] = {"program_name", "-o"};
     int argCount = 2;
-    try {
-        parser->parseInput(argCount, arguments);
-    } catch (const std::exception &e) {
-        ASSERT_THROW("Command not recognized: -o",std::runtime_error);
-    }
+
+    ASSERT_THROW(parser->parseInput(argCount, arguments),std::runtime_error);
+
+    delete parser;
+}
+
+TEST(TestCommand, TestFinTraitement) {
+    testing::internal::CaptureStdout() ;
+
+    Target target;
+
+    const auto *parser = new Parsing(target);
+
+    char *arguments[] = {"program_name", "-f"};
+    int argCount = 2;
+
+    parser->parseInput(argCount, arguments);
+
+    std::string output = testing::internal::GetCapturedStdout();
+
+    ASSERT_EQ(output, "Finished");
 
     delete parser;
 }

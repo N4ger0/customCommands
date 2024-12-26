@@ -55,5 +55,13 @@ public:
     void execute() override;
 };
 
+class FinishedCommand : public Command {
+public:
+    FinishedCommand();
+
+    void setArguments(const std::vector<std::string> &args) override;
+
+    void execute() override;
+};
 
 #endif //COMMAND_H

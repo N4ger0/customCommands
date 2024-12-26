@@ -12,6 +12,7 @@
 
 Parsing::Parsing(const Target &targets) : commandsToParse(), targets(targets) {
     commandsToParse.push_back(new HelpCommand(*this));
+    commandsToParse.push_back(new FinishedCommand());
 }
 
 std::vector<std::string> Parsing::allDescriptions() const {
