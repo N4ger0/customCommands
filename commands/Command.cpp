@@ -37,6 +37,10 @@ bool Command::executesNow() const {
     return c_activateImmediately;
 }
 
+std::size_t Command::nbArguments() const {
+    return c_nbOfArguments;
+}
+
 HelpCommand::HelpCommand(const Parsing &parser) : Command("help", {"-h", "--help"},
                                                           0, "Display this help message", false, true), parser(parser) {
 }

@@ -13,7 +13,7 @@
 Parsing::Parsing(const Target &targets) : commandsToParse(), targets(targets) {
     commandsToParse.push_back(new HelpCommand(*this));
     commandsToParse.push_back(new FinishedCommand());
-    commandsToParse.push_back(new MandatoryCommand());
+    //commandsToParse.push_back(new MandatoryCommand());
 }
 
 std::vector<std::string> Parsing::allDescriptions() const {
@@ -37,6 +37,10 @@ void Parsing::parseInput(int argc, char *argv[]) const {
         return;
     }
 
+    if (checkMissingMandatory(inputParts)) {
+        throw std::runtime_error("Mandatory command not found.");
+    }
+
     std::vector<std::pair<Command*, std::vector<std::string>>> deferredCommands;
 
     for (size_t i = 0; i < inputParts.size(); ++i) {
@@ -57,10 +61,9 @@ void Parsing::parseInput(int argc, char *argv[]) const {
             args.emplace_back(inputParts[++i]);
         }
 
-        if (args.size() != command->isMandatoryCommand() &&
-            args.size() != command->isMandatoryCommand() + command->aliases().size()) {
+        if (args.size() != command->nbArguments()) {
             throw std::runtime_error("Incorrect number of arguments for command: " + commandName);
-            }
+        }
 
         command->setArguments(args);
 
@@ -107,12 +110,23 @@ void Parsing::addCommand(Command *command) {
     commandsToParse.push_back(command);
 }
 
-bool Parsing::checkMissingMandatory() const {
+bool Parsing::checkMissingMandatory(std::vector<std::string> inputParts) const {
     for (auto *command: commandsToParse) {
         if(command->isMandatoryCommand()) {
-
+            for (const auto& myarg : inputParts) {
+                if (command->name() == myarg) {
+                    return false;
+                }
+                for (const auto &alias: command->aliases()) {
+                    if (alias == myarg) {
+                        return false;
+                    }
+                }
+            }
+            return true ;
         }
     }
+    return false;
 }
 
 

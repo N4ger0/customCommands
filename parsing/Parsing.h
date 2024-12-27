@@ -29,7 +29,7 @@ public:
 
     std::vector<std::string> allDescriptions() const;
 
-    bool checkMissingMandatory() const ;
+    bool checkMissingMandatory(std::vector<std::string> inputParts) const ;
 
     ~Parsing();
 };

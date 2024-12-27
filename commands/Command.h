@@ -41,6 +41,8 @@ public:
     bool isMandatoryCommand() const;
 
     bool executesNow() const;
+
+    std::size_t nbArguments() const;
 };
 
 
