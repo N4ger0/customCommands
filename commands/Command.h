@@ -57,32 +57,4 @@ public:
     void execute() override;
 };
 
-class FinishedCommand : public Command {
-public:
-    FinishedCommand();
-
-    void setArguments(const std::vector<std::string> &args) override;
-
-    void execute() override;
-};
-
-class MandatoryCommand : public Command {
-public:
-    MandatoryCommand();
-
-    void setArguments(const std::vector<std::string> &args) override;
-
-    void execute() override;
-};
-
-class ParamCommand : public Command {
-    std::string param ;
-public:
-    ParamCommand();
-
-    void setArguments(const std::vector<std::string> &args) override;
-
-    void execute() override;
-};
-
 #endif //COMMAND_H

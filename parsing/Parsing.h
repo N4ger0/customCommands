@@ -10,20 +10,20 @@
 #include <vector>
 
 #include "../commands/Command.h"
-#include "../target/Target.h"
+#include "../target/Targets.h"
 
 class Parsing {
     std::vector<Command *> commandsToParse;
-    std::vector<Target *> targets;
+    Targets& targets;
 
 public:
-    Parsing();
+    Parsing(Targets& targets);
 
     void addCommand(Command *command);
 
     Command *findCommand(const std::string &name) const;
 
-    void parseInput(int argc, char *argv[]) const;
+    void parseInput(int argc, const char *argv[]) const;
 
     void executeAll() const;
 

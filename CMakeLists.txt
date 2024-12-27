@@ -6,8 +6,8 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(customCommands main.cpp
         commands/Command.cpp
         commands/Command.h
-        target/Target.cpp
-        target/Target.h
+        target/Targets.cpp
+        target/Targets.h
         parsing/Parsing.cpp
         parsing/Parsing.h
 )

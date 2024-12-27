@@ -10,11 +10,8 @@
 #include <iostream>
 #include <ostream>
 
-Parsing::Parsing() : commandsToParse() {
+Parsing::Parsing(Targets& targets) : commandsToParse(), targets(targets) {
     commandsToParse.push_back(new HelpCommand(*this));
-    commandsToParse.push_back(new FinishedCommand());
-    commandsToParse.push_back(new MandatoryCommand());
-    commandsToParse.push_back(new ParamCommand());
 }
 
 std::vector<std::string> Parsing::allDescriptions() const {
@@ -27,8 +24,9 @@ std::vector<std::string> Parsing::allDescriptions() const {
     return descriptions;
 }
 
-void Parsing::parseInput(int argc, char *argv[]) const {
+void Parsing::parseInput(const int argc, const char *argv[]) const {
     std::vector<std::string> inputParts;
+
     for (int i = 1; i < argc; ++i) {
         inputParts.emplace_back(argv[i]);
     }
@@ -43,43 +41,45 @@ void Parsing::parseInput(int argc, char *argv[]) const {
     }
 
     std::vector<std::pair<Command*, std::vector<std::string>>> deferredCommands;
-    std::vector<std::string> targets ;
 
     for (size_t i = 0; i < inputParts.size(); ++i) {
         const std::string &commandName = inputParts[i];
 
-        if (commandName.empty() || commandName[0] != '-') {
-            throw std::runtime_error("Invalid command syntax: " + commandName);
-        }
+        if (commandName.empty() || commandName[0] == '-') {
+            Command *command = findCommand(commandName);
 
-        Command *command = findCommand(commandName);
-
-        if (!command) {
-            throw std::runtime_error("Command not recognized: " + commandName);
-        }
-
-        std::vector<std::string> args;
-        // while (i + 1 < inputParts.size() && inputParts[i + 1][0] != '-') {
-        //     args.emplace_back(inputParts[++i]);
-        // }
-        //
-        // if (args.size() != command->nbArguments()) {
-        //     throw std::runtime_error("Incorrect number of arguments for command: " + commandName);
-        // }
-
-        while (i < i+command->nbArguments()) {
-            if(inputParts[i + 1][0] != '-') {
-                throw std::runtime_error("Missing arguments for command: " + commandName);
+            if (!command) {
+                throw std::runtime_error("Command not recognized: " + commandName);
             }
-            args.emplace_back(inputParts[++i]);
-        }
 
-        command->setArguments(args);
+            std::vector<std::string> args;
 
-        if (command->executesNow()) {
-            command->execute();
+            if (command->nbArguments() > 0) {
+                size_t numArgsCollected = 0;
+
+                while (i + 1 < inputParts.size() && inputParts[i + 1][0] != '-') {
+                    args.push_back(inputParts[++i]);
+                    numArgsCollected++;
+                    if (numArgsCollected == command->nbArguments()) {
+                        break;
+                    }
+                }
+
+                if (numArgsCollected != command->nbArguments()) {
+                    throw std::runtime_error("Incorrect number of arguments for command: " + commandName);
+                }
+            }
+
+            command->setArguments(args);
+
+            if (command->executesNow()) {
+                command->execute();
+            } else {
+                deferredCommands.emplace_back(command, args);
+            }
         } else {
-            deferredCommands.emplace_back(command, args);
+            // UNIQUEMENT VRAI SI C VRMT LA DERNIERE DES COMMANDES !!!
+            targets.addTarget(commandName);
         }
     }
 
@@ -87,7 +87,17 @@ void Parsing::parseInput(int argc, char *argv[]) const {
         command->setArguments(args);
         command->execute();
     }
+
+    if (targets.empty() && !targets.canBeEmpty()) {
+        throw std::runtime_error("Targets cannot be empty.");
+    }
+
+    std::cout << "Targets" << std::endl;
+    for (auto &t : targets.t_targs) {
+        std::cout << t << std::endl;
+    }
 }
+
 
 void Parsing::executeAll() const {
     for (auto *command: commandsToParse) {

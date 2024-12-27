@@ -2,12 +2,20 @@
 
 #include "parsing/Parsing.h"
 #include "commands/Command.h"
+#include "gtest/test_commands/test_commands.h"
 
-int main(int argc, char *argv[]) {
+int main(const int argc, const char *argv[]) {
 
-    const auto *parser = new Parsing();
+    Targets targets(true, "test");
 
-    parser->parseInput(argc, argv);
+    auto *parser = new Parsing(targets);
+
+    try {
+        parser->parseInput(argc, argv);
+    } catch (const std::runtime_error& e) {
+        std::cout << "Error: " << e.what() << std::endl;
+    }
+
 
     delete parser;
 }
