@@ -75,4 +75,14 @@ public:
     void execute() override;
 };
 
+class ParamCommand : public Command {
+    std::string param ;
+public:
+    ParamCommand();
+
+    void setArguments(const std::vector<std::string> &args) override;
+
+    void execute() override;
+};
+
 #endif //COMMAND_H

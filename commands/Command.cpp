@@ -85,3 +85,14 @@ void MandatoryCommand::setArguments(const std::vector<std::string> &args) {
         throw std::runtime_error("Help command does not take arguments.");
     }
 }
+
+ParamCommand::ParamCommand() : Command("param", {"-p", "--param"}, 1, "display the given parameter", false, true
+    ){}
+
+void ParamCommand::setArguments(const std::vector<std::string> &args) {
+    this->param = args.at(0);
+}
+
+void ParamCommand::execute() {
+    std::cout << "Param : " << this->param << "\n";
+}
