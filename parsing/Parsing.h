@@ -14,10 +14,10 @@
 
 class Parsing {
     std::vector<Command *> commandsToParse;
-    Target targets;
+    std::vector<Target *> targets;
 
 public:
-    Parsing(const Target &targets);
+    Parsing();
 
     void addCommand(Command *command);
 

@@ -4,9 +4,8 @@
 #include "commands/Command.h"
 
 int main(int argc, char *argv[]) {
-    Target target;
 
-    const auto *parser = new Parsing(target);
+    const auto *parser = new Parsing();
 
     parser->parseInput(argc, argv);
 

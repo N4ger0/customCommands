@@ -10,7 +10,7 @@
 #include <iostream>
 #include <ostream>
 
-Parsing::Parsing(const Target &targets) : commandsToParse(), targets(targets) {
+Parsing::Parsing() : commandsToParse() {
     commandsToParse.push_back(new HelpCommand(*this));
     commandsToParse.push_back(new FinishedCommand());
     commandsToParse.push_back(new MandatoryCommand());

@@ -44,3 +44,7 @@
 1700	2065	1735303474978319812	gtest/Google_Tests_run	4330c133fcf33d80
 5	1447	1735304823490176269	gtest/CMakeFiles/Google_Tests_run.dir/test1.cpp.o	9d1dc77c8102b42f
 1447	1762	1735304824934348016	gtest/Google_Tests_run	4330c133fcf33d80
+14	1002	1735311030722834304	CMakeFiles/customCommands.dir/main.cpp.o	34fd1ada7a8feffe
+15	1153	1735311030722834304	CMakeFiles/customCommands.dir/commands/Command.cpp.o	6d443f68aefa1e4b
+15	1475	1735311030722834304	CMakeFiles/customCommands.dir/parsing/Parsing.cpp.o	bc29ce6952656d6a
+1475	1630	1735311032182812547	customCommands	a4b1cda54000f5b6
