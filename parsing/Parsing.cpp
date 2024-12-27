@@ -43,6 +43,7 @@ void Parsing::parseInput(int argc, char *argv[]) const {
     }
 
     std::vector<std::pair<Command*, std::vector<std::string>>> deferredCommands;
+    std::vector<std::string> targets ;
 
     for (size_t i = 0; i < inputParts.size(); ++i) {
         const std::string &commandName = inputParts[i];
