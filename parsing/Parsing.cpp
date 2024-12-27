@@ -58,12 +58,19 @@ void Parsing::parseInput(int argc, char *argv[]) const {
         }
 
         std::vector<std::string> args;
-        while (i + 1 < inputParts.size() && inputParts[i + 1][0] != '-') {
-            args.emplace_back(inputParts[++i]);
-        }
+        // while (i + 1 < inputParts.size() && inputParts[i + 1][0] != '-') {
+        //     args.emplace_back(inputParts[++i]);
+        // }
+        //
+        // if (args.size() != command->nbArguments()) {
+        //     throw std::runtime_error("Incorrect number of arguments for command: " + commandName);
+        // }
 
-        if (args.size() != command->nbArguments()) {
-            throw std::runtime_error("Incorrect number of arguments for command: " + commandName);
+        while (i < i+command->nbArguments()) {
+            if(inputParts[i + 1][0] != '-') {
+                throw std::runtime_error("Missing arguments for command: " + commandName);
+            }
+            args.emplace_back(inputParts[++i]);
         }
 
         command->setArguments(args);
