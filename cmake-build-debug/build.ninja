@@ -61,8 +61,8 @@ build CMakeFiles/customCommands.dir/commands/Command.cpp.o: CXX_COMPILER__custom
   OBJECT_DIR = CMakeFiles/customCommands.dir
   OBJECT_FILE_DIR = CMakeFiles/customCommands.dir/commands
 
-build CMakeFiles/customCommands.dir/target/Target.cpp.o: CXX_COMPILER__customCommands_unscanned_Debug /home/oregan/Documents/COO/customCommands/target/Target.cpp || cmake_object_order_depends_target_customCommands
-  DEP_FILE = CMakeFiles/customCommands.dir/target/Target.cpp.o.d
+build CMakeFiles/customCommands.dir/target/Targets.cpp.o: CXX_COMPILER__customCommands_unscanned_Debug /home/oregan/Documents/COO/customCommands/target/Targets.cpp || cmake_object_order_depends_target_customCommands
+  DEP_FILE = CMakeFiles/customCommands.dir/target/Targets.cpp.o.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/customCommands.dir
   OBJECT_FILE_DIR = CMakeFiles/customCommands.dir/target
@@ -81,7 +81,7 @@ build CMakeFiles/customCommands.dir/parsing/Parsing.cpp.o: CXX_COMPILER__customC
 #############################################
 # Link the executable customCommands
 
-build customCommands: CXX_EXECUTABLE_LINKER__customCommands_Debug CMakeFiles/customCommands.dir/main.cpp.o CMakeFiles/customCommands.dir/commands/Command.cpp.o CMakeFiles/customCommands.dir/target/Target.cpp.o CMakeFiles/customCommands.dir/parsing/Parsing.cpp.o
+build customCommands: CXX_EXECUTABLE_LINKER__customCommands_Debug CMakeFiles/customCommands.dir/main.cpp.o CMakeFiles/customCommands.dir/commands/Command.cpp.o CMakeFiles/customCommands.dir/target/Targets.cpp.o CMakeFiles/customCommands.dir/parsing/Parsing.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/customCommands.dir
   POST_BUILD = :
@@ -168,8 +168,8 @@ build install/strip: phony CMakeFiles/install/strip.util
 
 build cmake_object_order_depends_target_Google_Tests_run: phony || cmake_object_order_depends_target_commands cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main cmake_object_order_depends_target_parsing cmake_object_order_depends_target_target
 
-build gtest/CMakeFiles/Google_Tests_run.dir/test1.cpp.o: CXX_COMPILER__Google_Tests_run_unscanned_Debug /home/oregan/Documents/COO/customCommands/gtest/test1.cpp || cmake_object_order_depends_target_Google_Tests_run
-  DEP_FILE = gtest/CMakeFiles/Google_Tests_run.dir/test1.cpp.o.d
+build gtest/CMakeFiles/Google_Tests_run.dir/tests_parser.cpp.o: CXX_COMPILER__Google_Tests_run_unscanned_Debug /home/oregan/Documents/COO/customCommands/gtest/tests_parser.cpp || cmake_object_order_depends_target_Google_Tests_run
+  DEP_FILE = gtest/CMakeFiles/Google_Tests_run.dir/tests_parser.cpp.o.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
   INCLUDES = -isystem /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/include -isystem /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest
   OBJECT_DIR = gtest/CMakeFiles/Google_Tests_run.dir
@@ -183,7 +183,7 @@ build gtest/CMakeFiles/Google_Tests_run.dir/test1.cpp.o: CXX_COMPILER__Google_Te
 #############################################
 # Link the executable gtest/Google_Tests_run
 
-build gtest/Google_Tests_run: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug gtest/CMakeFiles/Google_Tests_run.dir/test1.cpp.o | lib/libgtest.a lib/libgtest_main.a gtest/libparsing.a gtest/libcommands.a gtest/libtarget.a lib/libgtest.a || gtest/libcommands.a gtest/libparsing.a gtest/libtarget.a lib/libgtest.a lib/libgtest_main.a
+build gtest/Google_Tests_run: CXX_EXECUTABLE_LINKER__Google_Tests_run_Debug gtest/CMakeFiles/Google_Tests_run.dir/tests_parser.cpp.o | lib/libgtest.a lib/libgtest_main.a gtest/libparsing.a gtest/libcommands.a gtest/libtarget.a lib/libgtest.a || gtest/libcommands.a gtest/libparsing.a gtest/libtarget.a lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g
   LINK_LIBRARIES = lib/libgtest.a  lib/libgtest_main.a  gtest/libparsing.a  gtest/libcommands.a  gtest/libtarget.a  lib/libgtest.a
   OBJECT_DIR = gtest/CMakeFiles/Google_Tests_run.dir
@@ -240,6 +240,13 @@ build gtest/CMakeFiles/commands.dir/__/commands/Command.cpp.o: CXX_COMPILER__com
   OBJECT_DIR = gtest/CMakeFiles/commands.dir
   OBJECT_FILE_DIR = gtest/CMakeFiles/commands.dir/__/commands
 
+build gtest/CMakeFiles/commands.dir/test_commands/test_commands.cpp.o: CXX_COMPILER__commands_unscanned_Debug /home/oregan/Documents/COO/customCommands/gtest/test_commands/test_commands.cpp || cmake_object_order_depends_target_commands
+  DEP_FILE = gtest/CMakeFiles/commands.dir/test_commands/test_commands.cpp.o.d
+  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  INCLUDES = -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/include -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest
+  OBJECT_DIR = gtest/CMakeFiles/commands.dir
+  OBJECT_FILE_DIR = gtest/CMakeFiles/commands.dir/test_commands
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target commands
@@ -248,7 +255,7 @@ build gtest/CMakeFiles/commands.dir/__/commands/Command.cpp.o: CXX_COMPILER__com
 #############################################
 # Link the static library gtest/libcommands.a
 
-build gtest/libcommands.a: CXX_STATIC_LIBRARY_LINKER__commands_Debug gtest/CMakeFiles/commands.dir/__/commands/Command.cpp.o
+build gtest/libcommands.a: CXX_STATIC_LIBRARY_LINKER__commands_Debug gtest/CMakeFiles/commands.dir/__/commands/Command.cpp.o gtest/CMakeFiles/commands.dir/test_commands/test_commands.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = gtest/CMakeFiles/commands.dir
   POST_BUILD = :
@@ -265,8 +272,8 @@ build gtest/libcommands.a: CXX_STATIC_LIBRARY_LINKER__commands_Debug gtest/CMake
 
 build cmake_object_order_depends_target_target: phony || .
 
-build gtest/CMakeFiles/target.dir/__/target/Target.cpp.o: CXX_COMPILER__target_unscanned_Debug /home/oregan/Documents/COO/customCommands/target/Target.cpp || cmake_object_order_depends_target_target
-  DEP_FILE = gtest/CMakeFiles/target.dir/__/target/Target.cpp.o.d
+build gtest/CMakeFiles/target.dir/__/target/Targets.cpp.o: CXX_COMPILER__target_unscanned_Debug /home/oregan/Documents/COO/customCommands/target/Targets.cpp || cmake_object_order_depends_target_target
+  DEP_FILE = gtest/CMakeFiles/target.dir/__/target/Targets.cpp.o.d
   FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
   INCLUDES = -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/include -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest
   OBJECT_DIR = gtest/CMakeFiles/target.dir
@@ -280,7 +287,7 @@ build gtest/CMakeFiles/target.dir/__/target/Target.cpp.o: CXX_COMPILER__target_u
 #############################################
 # Link the static library gtest/libtarget.a
 
-build gtest/libtarget.a: CXX_STATIC_LIBRARY_LINKER__target_Debug gtest/CMakeFiles/target.dir/__/target/Target.cpp.o
+build gtest/libtarget.a: CXX_STATIC_LIBRARY_LINKER__target_Debug gtest/CMakeFiles/target.dir/__/target/Targets.cpp.o
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = gtest/CMakeFiles/target.dir
   POST_BUILD = :

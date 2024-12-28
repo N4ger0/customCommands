@@ -4,9 +4,9 @@
 #include "test_commands/test_commands.h"
 
 TEST(TestCommand, TestDebutTraitement) {
-    Targets targets;
+    Targets targets(true, "Je suis une target");
 
-    auto *parser = new Parsing();
+    auto *parser = new Parsing(targets);
     parser->addCommand(new FinishedCommand());
     parser->addCommand(new MandatoryCommand());
     parser->addCommand(new ParamCommand());
@@ -24,9 +24,9 @@ TEST(TestCommand, TestDebutTraitement) {
 }
 
 TEST(TestCommand, TestInexistant) {
-    Targets target;
+    Targets target(true, "");
 
-    auto *parser = new Parsing();
+    auto *parser = new Parsing(target);
     parser->addCommand(new FinishedCommand());
     parser->addCommand(new MandatoryCommand());
     parser->addCommand(new ParamCommand());
@@ -40,9 +40,9 @@ TEST(TestCommand, TestInexistant) {
 }
 
 TEST(TestCommand, TestFinTraitement) {
-    Targets target;
+    Targets target(true, "");
 
-    auto *parser = new Parsing();
+    auto *parser = new Parsing(target);
     parser->addCommand(new FinishedCommand());
     parser->addCommand(new MandatoryCommand());
     parser->addCommand(new ParamCommand());
@@ -60,9 +60,9 @@ TEST(TestCommand, TestFinTraitement) {
 }
 
 TEST(TestCommand, TestMandatory) {
-    Targets target;
+    Targets target(true, "");
 
-    auto *parser = new Parsing();
+    auto *parser = new Parsing(target);
     parser->addCommand(new FinishedCommand());
     parser->addCommand(new MandatoryCommand());
     parser->addCommand(new ParamCommand());
@@ -74,11 +74,11 @@ TEST(TestCommand, TestMandatory) {
 
     delete parser;
 }
-/*
-TEST(TestCommand, TestParam) {
-    Target target;
 
-    auto *parser = new Parsing();
+TEST(TestCommand, TestParam) {
+    Targets target(true, "");
+
+    auto *parser = new Parsing(target);
     parser->addCommand(new FinishedCommand());
     parser->addCommand(new MandatoryCommand());
     parser->addCommand(new ParamCommand());
@@ -93,12 +93,12 @@ TEST(TestCommand, TestParam) {
     ASSERT_EQ(output, "Param : testParam\n");
 
     delete parser;
-}*/
+}
 
 TEST(TestCommand, TestPreservation) {
-    Targets target;
+    Targets target(true, "");
 
-    auto *parser = new Parsing();
+    auto *parser = new Parsing(target);
     parser->addCommand(new FinishedCommand());
     parser->addCommand(new MandatoryCommand());
     parser->addCommand(new ParamCommand());
@@ -111,6 +111,22 @@ TEST(TestCommand, TestPreservation) {
     std::string output = testing::internal::GetCapturedStdout();
 
     ASSERT_EQ(output, "Available commands :\n- help : Display this help message\n- finished : Display finished message at the end of the execution\n- mandatory : Mandatory command\n- param : display the given parameter\nFinished !");
+
+    delete parser;
+}
+
+TEST(TestCommand, TestTargetMisplaced) {
+    Targets target(false, "des trucs textes");
+
+    auto *parser = new Parsing(target);
+    parser->addCommand(new FinishedCommand());
+    parser->addCommand(new MandatoryCommand());
+    parser->addCommand(new ParamCommand());
+
+    const char *arguments[] = {"program_name", "-p", "testParam", "testParam2", "-m", "target"};
+    int argCount = 6;
+
+    ASSERT_THROW(parser->parseInput(argCount, arguments), std::runtime_error);
 
     delete parser;
 }

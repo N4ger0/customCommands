@@ -78,8 +78,15 @@ void Parsing::parseInput(const int argc, const char *argv[]) const {
                 deferredCommands.emplace_back(command, args);
             }
         } else {
-            // UNIQUEMENT VRAI SI C VRMT LA DERNIERE DES COMMANDES !!!
+            // UNIQUEMENT VRAI SI pas une commande ni un argument de commande !!!
+            //peut ne pas etre en fin de ligne
             targets.addTarget(commandName);
+            while (i + 1 < inputParts.size()) {
+                if(inputParts[i + 1][0] == '-') {
+                    throw std::runtime_error("Misplaced target : " + inputParts[i]);
+                }
+                targets.addTarget(inputParts[++i]);
+            }
         }
     }
 
