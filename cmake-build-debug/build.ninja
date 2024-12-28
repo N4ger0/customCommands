@@ -51,25 +51,25 @@ build cmake_object_order_depends_target_customCommands: phony || .
 
 build CMakeFiles/customCommands.dir/main.cpp.o: CXX_COMPILER__customCommands_unscanned_Debug /home/oregan/Documents/COO/customCommands/main.cpp || cmake_object_order_depends_target_customCommands
   DEP_FILE = CMakeFiles/customCommands.dir/main.cpp.o.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/customCommands.dir
   OBJECT_FILE_DIR = CMakeFiles/customCommands.dir
 
 build CMakeFiles/customCommands.dir/commands/Command.cpp.o: CXX_COMPILER__customCommands_unscanned_Debug /home/oregan/Documents/COO/customCommands/commands/Command.cpp || cmake_object_order_depends_target_customCommands
   DEP_FILE = CMakeFiles/customCommands.dir/commands/Command.cpp.o.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/customCommands.dir
   OBJECT_FILE_DIR = CMakeFiles/customCommands.dir/commands
 
 build CMakeFiles/customCommands.dir/target/Targets.cpp.o: CXX_COMPILER__customCommands_unscanned_Debug /home/oregan/Documents/COO/customCommands/target/Targets.cpp || cmake_object_order_depends_target_customCommands
   DEP_FILE = CMakeFiles/customCommands.dir/target/Targets.cpp.o.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/customCommands.dir
   OBJECT_FILE_DIR = CMakeFiles/customCommands.dir/target
 
 build CMakeFiles/customCommands.dir/parsing/Parsing.cpp.o: CXX_COMPILER__customCommands_unscanned_Debug /home/oregan/Documents/COO/customCommands/parsing/Parsing.cpp || cmake_object_order_depends_target_customCommands
   DEP_FILE = CMakeFiles/customCommands.dir/parsing/Parsing.cpp.o.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles/customCommands.dir
   OBJECT_FILE_DIR = CMakeFiles/customCommands.dir/parsing
 
@@ -170,7 +170,7 @@ build cmake_object_order_depends_target_Google_Tests_run: phony || cmake_object_
 
 build gtest/CMakeFiles/Google_Tests_run.dir/tests_parser.cpp.o: CXX_COMPILER__Google_Tests_run_unscanned_Debug /home/oregan/Documents/COO/customCommands/gtest/tests_parser.cpp || cmake_object_order_depends_target_Google_Tests_run
   DEP_FILE = gtest/CMakeFiles/Google_Tests_run.dir/tests_parser.cpp.o.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -isystem /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/include -isystem /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest
   OBJECT_DIR = gtest/CMakeFiles/Google_Tests_run.dir
   OBJECT_FILE_DIR = gtest/CMakeFiles/Google_Tests_run.dir
@@ -203,7 +203,7 @@ build cmake_object_order_depends_target_parsing: phony || .
 
 build gtest/CMakeFiles/parsing.dir/__/parsing/Parsing.cpp.o: CXX_COMPILER__parsing_unscanned_Debug /home/oregan/Documents/COO/customCommands/parsing/Parsing.cpp || cmake_object_order_depends_target_parsing
   DEP_FILE = gtest/CMakeFiles/parsing.dir/__/parsing/Parsing.cpp.o.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/include -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest
   OBJECT_DIR = gtest/CMakeFiles/parsing.dir
   OBJECT_FILE_DIR = gtest/CMakeFiles/parsing.dir/__/parsing
@@ -235,14 +235,14 @@ build cmake_object_order_depends_target_commands: phony || .
 
 build gtest/CMakeFiles/commands.dir/__/commands/Command.cpp.o: CXX_COMPILER__commands_unscanned_Debug /home/oregan/Documents/COO/customCommands/commands/Command.cpp || cmake_object_order_depends_target_commands
   DEP_FILE = gtest/CMakeFiles/commands.dir/__/commands/Command.cpp.o.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/include -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest
   OBJECT_DIR = gtest/CMakeFiles/commands.dir
   OBJECT_FILE_DIR = gtest/CMakeFiles/commands.dir/__/commands
 
 build gtest/CMakeFiles/commands.dir/test_commands/test_commands.cpp.o: CXX_COMPILER__commands_unscanned_Debug /home/oregan/Documents/COO/customCommands/gtest/test_commands/test_commands.cpp || cmake_object_order_depends_target_commands
   DEP_FILE = gtest/CMakeFiles/commands.dir/test_commands/test_commands.cpp.o.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/include -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest
   OBJECT_DIR = gtest/CMakeFiles/commands.dir
   OBJECT_FILE_DIR = gtest/CMakeFiles/commands.dir/test_commands
@@ -274,7 +274,7 @@ build cmake_object_order_depends_target_target: phony || .
 
 build gtest/CMakeFiles/target.dir/__/target/Targets.cpp.o: CXX_COMPILER__target_unscanned_Debug /home/oregan/Documents/COO/customCommands/target/Targets.cpp || cmake_object_order_depends_target_target
   DEP_FILE = gtest/CMakeFiles/target.dir/__/target/Targets.cpp.o.d
-  FLAGS = -g -std=gnu++14 -fdiagnostics-color=always
+  FLAGS = -g -fdiagnostics-color=always
   INCLUDES = -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/include -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest
   OBJECT_DIR = gtest/CMakeFiles/target.dir
   OBJECT_FILE_DIR = gtest/CMakeFiles/target.dir/__/target
@@ -446,7 +446,7 @@ build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depen
 
 build gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: CXX_COMPILER__gmock_unscanned_Debug /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
   DEP_FILE = gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d
-  FLAGS = -g -std=c++14 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  FLAGS = -g -std=c++17 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
   INCLUDES = -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googlemock/include -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googlemock -isystem /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/include -isystem /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest
   OBJECT_DIR = gtest/googletest-main/googlemock/CMakeFiles/gmock.dir
   OBJECT_FILE_DIR = gtest/googletest-main/googlemock/CMakeFiles/gmock.dir/src
@@ -478,7 +478,7 @@ build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_
 
 build gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: CXX_COMPILER__gmock_main_unscanned_Debug /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
   DEP_FILE = gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d
-  FLAGS = -g -std=c++14 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  FLAGS = -g -std=c++17 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
   INCLUDES = -isystem /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googlemock/include -isystem /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googlemock -isystem /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/include -isystem /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest
   OBJECT_DIR = gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir
   OBJECT_FILE_DIR = gtest/googletest-main/googlemock/CMakeFiles/gmock_main.dir/src
@@ -580,7 +580,7 @@ build cmake_object_order_depends_target_gtest: phony || .
 
 build gtest/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_COMPILER__gtest_unscanned_Debug /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
   DEP_FILE = gtest/googletest-main/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d
-  FLAGS = -g -std=c++14 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  FLAGS = -g -std=c++17 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
   INCLUDES = -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/include -I/home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest
   OBJECT_DIR = gtest/googletest-main/googletest/CMakeFiles/gtest.dir
   OBJECT_FILE_DIR = gtest/googletest-main/googletest/CMakeFiles/gtest.dir/src
@@ -612,7 +612,7 @@ build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_
 
 build gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: CXX_COMPILER__gtest_main_unscanned_Debug /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
   DEP_FILE = gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d
-  FLAGS = -g -std=c++14 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  FLAGS = -g -std=c++17 -fdiagnostics-color=always -Wall -Wshadow -Wundef -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
   INCLUDES = -isystem /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest/include -isystem /home/oregan/Documents/COO/customCommands/gtest/googletest-main/googletest
   OBJECT_DIR = gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir
   OBJECT_FILE_DIR = gtest/googletest-main/googletest/CMakeFiles/gtest_main.dir/src

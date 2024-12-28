@@ -10,7 +10,7 @@
 #include <iostream>
 #include "../../commands/Command.h"
 
-FinishedCommand::FinishedCommand() : Command("finished", {"-f", "--finished"},
+FinishedCommand::FinishedCommand() : Command("finished", {"--finished","-f"},
                                              0, "Display finished message at the end of the execution", false, false) {
 }
 
@@ -24,7 +24,7 @@ void FinishedCommand::setArguments(const std::vector<std::string> &args) {
     }
 }
 
-MandatoryCommand::MandatoryCommand() : Command("mandatory", {"-m", "--mandatory"},
+MandatoryCommand::MandatoryCommand() : Command("mandatory", {"--mandatory", "-m"},
                                                0, "Mandatory command", true, true) {
 }
 
@@ -37,7 +37,7 @@ void MandatoryCommand::setArguments(const std::vector<std::string> &args) {
     }
 }
 
-ParamCommand::ParamCommand() : Command("param", {"-p", "--param"}, 1, "display the given parameter", false, true
+ParamCommand::ParamCommand() : Command("param", {"--param", "-p"}, 1, "display the given parameter", false, true
 ) {
 }
 

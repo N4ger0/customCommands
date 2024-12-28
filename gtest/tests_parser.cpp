@@ -19,7 +19,7 @@ TEST(TestCommand, TestDebutTraitement) {
     std::string output = testing::internal::GetCapturedStdout();
 
     ASSERT_EQ(output,
-              "Available commands :\n- help : Display this help message\n- finished : Display finished message at the end of the execution\n- mandatory : Mandatory command\n- param : display the given parameter\n");
+        "Usage : program_name [--help|-h] [--finished|-f] [--mandatory|-m] [--param|-p argument_1] Targets*\nOptions :\n\t--help, -h : Display this \x1B[4mhelp\x1B[0m message\n\t--finished, -f : Display finished message at the end of the execution\n\t--mandatory, -m : Mandatory command\n\t--param, -p : display the given parameter\n");
 
     delete parser;
 }
@@ -112,7 +112,7 @@ TEST(TestCommand, TestPreservation) {
     std::string output = testing::internal::GetCapturedStdout();
 
     ASSERT_EQ(output,
-              "Available commands :\n- help : Display this help message\n- finished : Display finished message at the end of the execution\n- mandatory : Mandatory command\n- param : display the given parameter\nFinished !");
+    "Usage : program_name [--help|-h] [--finished|-f] [--mandatory|-m] [--param|-p argument_1] Targets*\nOptions :\n\t--help, -h : Display this \x1B[4mhelp\x1B[0m message\n\t--finished, -f : Display finished message at the end of the execution\n\t--mandatory, -m : Mandatory command\n\t--param, -p : display the given parameter\nFinished !");
 
     delete parser;
 }
@@ -129,6 +129,26 @@ TEST(TestCommand, TestTargetMisplaced) {
     int argCount = 6;
 
     ASSERT_THROW(parser->parseInput(argCount, arguments), std::runtime_error);
+
+    delete parser;
+}
+
+TEST(TestCommand, TestTarget) {
+    Targets target(false, "des trucs textes");
+
+    auto *parser = new Parsing(target);
+    parser->addCommand(new FinishedCommand());
+    parser->addCommand(new MandatoryCommand());
+    parser->addCommand(new ParamCommand());
+
+    const char *arguments[] = {"program_name", "-p", "testParam", "-m", "target", "target2"};
+    int argCount = 6;
+
+    parser->parseInput(argCount, arguments);
+    std::vector<std::string> oracle ;
+    oracle.push_back("target");
+    oracle.push_back("target2");
+    ASSERT_EQ(parser->targets().targets(), oracle);
 
     delete parser;
 }

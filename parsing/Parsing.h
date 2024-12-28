@@ -13,7 +13,7 @@
 #include "../target/Targets.h"
 
 class Parsing {
-    std::vector<Command *> p_commandsToParse;
+
     Targets &p_targets;
 
     Command *findCommand(const std::string &name) const;
@@ -23,6 +23,8 @@ class Parsing {
     bool checkMissingMandatory(const std::vector<std::string> &inputParts) const;
 
 public:
+    std::vector<Command *> p_commandsToParse;
+    mutable std::string exename ;
     explicit Parsing(Targets &targets);
 
     void addCommand(Command *command);

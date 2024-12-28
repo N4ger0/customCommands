@@ -55,14 +55,23 @@ HelpCommand::HelpCommand(const Parsing &parser) : Command("help", {"--help", "-h
 
 void HelpCommand::execute() {
     std::string usage;
-    usage += "Usage : myexe [";
-    for (size_t i = 0; i < c_aliases.size(); ++i) {
-        usage += c_aliases[i];
-        if (i != c_aliases.size() - 1) {
-            usage += "|";
+    usage += "Usage : " + parser.exename + " ";
+    for (const auto &command: parser.p_commandsToParse) {
+        usage += "[";
+        for (size_t i = 0; i < command->aliases().size(); ++i) {
+            usage += command->aliases()[i];
+            if (i != c_aliases.size() - 1) {
+                usage += "|";
+            }
         }
+        if(command->nbArguments() != 0) {
+            for(int i = 0; i < command->nbArguments(); ++i) {
+                usage += " argument_" + std::to_string(i+1) ;
+            }
+        }
+        usage += "] ";
     }
-    usage += "] Targets+ (Files...)";
+    usage += "Targets*" ;
 
     std::cout << usage << std::endl;
     std::cout << "Options :" <<std::endl;

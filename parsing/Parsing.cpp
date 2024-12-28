@@ -27,6 +27,8 @@ std::vector<std::string> Parsing::allDescriptions() const {
 void Parsing::parseInput(const int argc, const char *argv[]) const {
     std::vector<std::string> inputParts;
 
+    exename = argv[0] ;
+
     for (int i = 1; i < argc; ++i) {
         inputParts.emplace_back(argv[i]);
     }
