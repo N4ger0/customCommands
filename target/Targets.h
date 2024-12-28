@@ -1,34 +1,32 @@
-#ifndef TARGET_H
-#define TARGET_H
+#ifndef TARGETS_H
+#define TARGETS_H
+
 #include <string>
 #include <vector>
-#include <iterator>
 
 class Targets {
     std::string t_description;
-    public:
     std::vector<std::string> t_targs;
     bool t_canBeEmpty;
 
 public:
-    Targets(const bool canBeEmpty, const std::string& description)
-        : t_description(description), t_canBeEmpty(canBeEmpty) {}
+    using const_iterator = std::vector<std::string>::const_iterator;
 
-    bool canBeEmpty() const {
-        return t_canBeEmpty;
-    }
+    Targets(bool canBeEmpty, const std::string &description);
 
-    const std::vector<std::string>& targets() const {
-        return t_targs;
-    }
+    bool canBeEmpty() const;
 
-    void addTarget(const std::string& targ) {
-        t_targs.push_back(targ);
-    }
+    const std::vector<std::string> &targets() const;
 
-    bool empty() const {
-        return t_targs.empty();
-    }
+    void addTarget(const std::string &targ);
+
+    bool empty() const;
+
+    const_iterator begin() const;
+
+    const_iterator end() const;
+
+    friend std::ostream &operator<<(std::ostream &os, const Targets &targets);
 };
 
-#endif // TARGET_H
+#endif // TARGETS_H

@@ -21,8 +21,16 @@ const std::string &Command::name() const {
     return c_name;
 }
 
-const std::string &Command::description() const {
-    return c_description;
+std::string Command::description() const {
+    std::string fullDescription;
+    for (size_t i = 0; i < c_aliases.size(); ++i) {
+        fullDescription += c_aliases[i];
+        if (i != c_aliases.size() - 1) {
+            fullDescription += ", ";
+        }
+    }
+    fullDescription += " : " + c_description;
+    return fullDescription;
 }
 
 const std::vector<std::string> &Command::aliases() const {
@@ -41,15 +49,27 @@ std::size_t Command::nbArguments() const {
     return c_nbOfArguments;
 }
 
-HelpCommand::HelpCommand(const Parsing &parser) : Command("help", {"-h", "--help"},
-                                                          0, "Display this help message", false, true), parser(parser) {
+HelpCommand::HelpCommand(const Parsing &parser) : Command("help", {"--help", "-h"},
+                                                          0, "Display this \033[4mhelp\033[0m message", false, true), parser(parser) {
 }
 
 void HelpCommand::execute() {
-    std::cout << "Available commands :\n";
+    std::string usage;
+    usage += "Usage : myexe [";
+    for (size_t i = 0; i < c_aliases.size(); ++i) {
+        usage += c_aliases[i];
+        if (i != c_aliases.size() - 1) {
+            usage += "|";
+        }
+    }
+    usage += "] Targets+ (Files...)";
+
+    std::cout << usage << std::endl;
+    std::cout << "Options :" <<std::endl;
+
     const auto descriptions = parser.allDescriptions();
     for (const auto &description: descriptions) {
-        std::cout << description << "\n";
+        std::cout <<  "\t" + description << "\n";
     }
 }
 

@@ -13,23 +13,27 @@
 #include "../target/Targets.h"
 
 class Parsing {
-    std::vector<Command *> commandsToParse;
-    Targets& targets;
-
-public:
-    Parsing(Targets& targets);
-
-    void addCommand(Command *command);
+    std::vector<Command *> p_commandsToParse;
+    Targets &p_targets;
 
     Command *findCommand(const std::string &name) const;
 
-    void parseInput(int argc, const char *argv[]) const;
-
     void executeAll() const;
+
+    bool checkMissingMandatory(const std::vector<std::string> &inputParts) const;
+
+public:
+    explicit Parsing(Targets &targets);
+
+    void addCommand(Command *command);
+
+    void parseInput(int argc, const char *argv[]) const;
 
     std::vector<std::string> allDescriptions() const;
 
-    bool checkMissingMandatory(std::vector<std::string> inputParts) const ;
+    bool hasCommand(const std::string &name) const;
+
+    const Targets &targets() const;
 
     ~Parsing();
 };

@@ -34,7 +34,7 @@ public:
 
     const std::string &name() const;
 
-    const std::string &description() const;
+    std::string description() const;
 
     const std::vector<std::string> &aliases() const;
 
@@ -45,18 +45,11 @@ public:
     std::size_t nbArguments() const;
 };
 
-class CommandWithArgs : public Command {
-public :
-    std::vector<std::string> args;
-    void setArguments(const std::vector<std::string> &args) override;
-};
-
-
-class HelpCommand : public Command {
+class HelpCommand final : public Command {
     const Parsing &parser;
 
 public:
-    HelpCommand(const Parsing &parser);
+    explicit HelpCommand(const Parsing &parser);
 
     void setArguments(const std::vector<std::string> &args) override;
 

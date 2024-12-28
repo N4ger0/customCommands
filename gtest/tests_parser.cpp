@@ -18,7 +18,8 @@ TEST(TestCommand, TestDebutTraitement) {
     parser->parseInput(argCount, arguments);
     std::string output = testing::internal::GetCapturedStdout();
 
-    ASSERT_EQ(output, "Available commands :\n- help : Display this help message\n- finished : Display finished message at the end of the execution\n- mandatory : Mandatory command\n- param : display the given parameter\n");
+    ASSERT_EQ(output,
+              "Available commands :\n- help : Display this help message\n- finished : Display finished message at the end of the execution\n- mandatory : Mandatory command\n- param : display the given parameter\n");
 
     delete parser;
 }
@@ -110,7 +111,8 @@ TEST(TestCommand, TestPreservation) {
     parser->parseInput(argCount, arguments);
     std::string output = testing::internal::GetCapturedStdout();
 
-    ASSERT_EQ(output, "Available commands :\n- help : Display this help message\n- finished : Display finished message at the end of the execution\n- mandatory : Mandatory command\n- param : display the given parameter\nFinished !");
+    ASSERT_EQ(output,
+              "Available commands :\n- help : Display this help message\n- finished : Display finished message at the end of the execution\n- mandatory : Mandatory command\n- param : display the given parameter\nFinished !");
 
     delete parser;
 }

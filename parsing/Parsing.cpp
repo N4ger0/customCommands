@@ -10,15 +10,15 @@
 #include <iostream>
 #include <ostream>
 
-Parsing::Parsing(Targets& targets) : commandsToParse(), targets(targets) {
-    commandsToParse.push_back(new HelpCommand(*this));
+Parsing::Parsing(Targets &targets) : p_commandsToParse(), p_targets(targets) {
+    p_commandsToParse.push_back(new HelpCommand(*this));
 }
 
 std::vector<std::string> Parsing::allDescriptions() const {
     std::vector<std::string> descriptions;
-    descriptions.reserve(commandsToParse.size());
-    for (const Command *command: commandsToParse) {
-        std::string description = "- " + command->name() + " : " + command->description();
+    descriptions.reserve(p_commandsToParse.size());
+    for (const Command *command: p_commandsToParse) {
+        std::string description = command->description();
         descriptions.push_back(description);
     }
     return descriptions;
@@ -32,7 +32,9 @@ void Parsing::parseInput(const int argc, const char *argv[]) const {
     }
 
     if (inputParts.empty()) {
-        std::cout << "No command provided. Use 'help' for a list of commands." << std::endl;
+        std::cout << "No command provided\n" << std::endl;
+        Command* command = p_commandsToParse.back();
+        command->execute();
         return;
     }
 
@@ -40,7 +42,7 @@ void Parsing::parseInput(const int argc, const char *argv[]) const {
         throw std::runtime_error("Mandatory command not found.");
     }
 
-    std::vector<std::pair<Command*, std::vector<std::string>>> deferredCommands;
+    std::vector<std::pair<Command *, std::vector<std::string> > > deferredCommands;
 
     for (size_t i = 0; i < inputParts.size(); ++i) {
         const std::string &commandName = inputParts[i];
@@ -78,36 +80,47 @@ void Parsing::parseInput(const int argc, const char *argv[]) const {
                 deferredCommands.emplace_back(command, args);
             }
         } else {
-            // UNIQUEMENT VRAI SI pas une commande ni un argument de commande !!!
-            //peut ne pas etre en fin de ligne
-            targets.addTarget(commandName);
+            p_targets.addTarget(commandName);
             while (i + 1 < inputParts.size()) {
-                if(inputParts[i + 1][0] == '-') {
+                if (inputParts[i + 1][0] == '-') {
                     throw std::runtime_error("Misplaced target : " + inputParts[i]);
                 }
-                targets.addTarget(inputParts[++i]);
+                p_targets.addTarget(inputParts[++i]);
             }
         }
     }
 
-    for (const auto& [command, args] : deferredCommands) {
+    for (const auto &[command, args]: deferredCommands) {
         command->setArguments(args);
         command->execute();
     }
 
-    if (targets.empty() && !targets.canBeEmpty()) {
+    if (p_targets.empty() && !p_targets.canBeEmpty()) {
         throw std::runtime_error("Targets cannot be empty.");
     }
+}
 
-    std::cout << "Targets" << std::endl;
-    for (auto &t : targets.t_targs) {
-        std::cout << t << std::endl;
+bool Parsing::hasCommand(const std::string &name) const {
+    for (const auto *command: p_commandsToParse) {
+        if (command->name() == name) {
+            return true;
+        }
+        for (const auto &alias: command->aliases()) {
+            if (alias == name) {
+                return true;
+            }
+        }
     }
+    return false;
+}
+
+const Targets &Parsing::targets() const {
+    return p_targets;
 }
 
 
 void Parsing::executeAll() const {
-    for (auto *command: commandsToParse) {
+    for (auto *command: p_commandsToParse) {
         if (!command->executesNow()) {
             command->execute();
         }
@@ -115,7 +128,7 @@ void Parsing::executeAll() const {
 }
 
 Command *Parsing::findCommand(const std::string &name) const {
-    for (auto *command: commandsToParse) {
+    for (auto *command: p_commandsToParse) {
         if (command->name() == name) {
             return command;
         }
@@ -133,13 +146,13 @@ void Parsing::addCommand(Command *command) {
     if (command == nullptr) {
         throw std::invalid_argument("Commande invalide");
     }
-    commandsToParse.push_back(command);
+    p_commandsToParse.push_back(command);
 }
 
-bool Parsing::checkMissingMandatory(std::vector<std::string> inputParts) const {
-    for (auto *command: commandsToParse) {
-        if(command->isMandatoryCommand()) {
-            for (const auto& myarg : inputParts) {
+bool Parsing::checkMissingMandatory(const std::vector<std::string> &inputParts) const {
+    for (auto *command: p_commandsToParse) {
+        if (command->isMandatoryCommand()) {
+            for (const auto &myarg: inputParts) {
                 if (command->name() == myarg) {
                     return false;
                 }
@@ -149,7 +162,7 @@ bool Parsing::checkMissingMandatory(std::vector<std::string> inputParts) const {
                     }
                 }
             }
-            return true ;
+            return true;
         }
     }
     return false;
@@ -157,7 +170,7 @@ bool Parsing::checkMissingMandatory(std::vector<std::string> inputParts) const {
 
 
 Parsing::~Parsing() {
-    for (const auto *command: commandsToParse) {
+    for (const auto *command: p_commandsToParse) {
         delete command;
     }
 }

@@ -25,7 +25,7 @@ void FinishedCommand::setArguments(const std::vector<std::string> &args) {
 }
 
 MandatoryCommand::MandatoryCommand() : Command("mandatory", {"-m", "--mandatory"},
-                                                          0, "Mandatory command", true, true) {
+                                               0, "Mandatory command", true, true) {
 }
 
 void MandatoryCommand::execute() {
@@ -38,7 +38,8 @@ void MandatoryCommand::setArguments(const std::vector<std::string> &args) {
 }
 
 ParamCommand::ParamCommand() : Command("param", {"-p", "--param"}, 1, "display the given parameter", false, true
-    ){}
+) {
+}
 
 void ParamCommand::setArguments(const std::vector<std::string> &args) {
     this->param = args.at(0);

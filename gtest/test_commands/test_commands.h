@@ -29,7 +29,8 @@ public:
 };
 
 class ParamCommand : public Command {
-    std::string param ;
+    std::string param;
+
 public:
     ParamCommand();
 
