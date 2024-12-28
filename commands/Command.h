@@ -45,6 +45,12 @@ public:
     std::size_t nbArguments() const;
 };
 
+class CommandWithArgs : public Command {
+public :
+    std::vector<std::string> args;
+    void setArguments(const std::vector<std::string> &args) override;
+};
+
 
 class HelpCommand : public Command {
     const Parsing &parser;

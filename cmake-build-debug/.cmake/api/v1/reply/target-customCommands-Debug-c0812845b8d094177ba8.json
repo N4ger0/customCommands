@@ -123,12 +123,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "target/Target.cpp",
+			"path" : "target/Targets.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "target/Target.h",
+			"path" : "target/Targets.h",
 			"sourceGroupIndex" : 1
 		},
 		{
