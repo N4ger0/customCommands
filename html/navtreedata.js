@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "My Project", "index.html", ]
+  [ "UpParser", "index.html", ]
 ];
 
 var NAVTREEINDEX =
