@@ -36,7 +36,7 @@ protected:
     /**
      * @brief A list of aliases for the command.
      *
-     * Aliases must begin with "-" for short names or "--" for long names.
+     * Aliases must begin with "-" for short names;
      */
     std::vector<std::string> c_aliases;
 
@@ -58,7 +58,6 @@ protected:
     /**
      * @brief Determines if the command can be executed immediately after being parsed.
      *
-     * Commands that require `Targets` must set this to `false`.
      */
     bool c_activateImmediately;
 
