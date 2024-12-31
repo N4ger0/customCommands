@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['hascommand_0',['hasCommand',['../classParsing.html#ab2921f8119035ebbf1be0846dec80887',1,'Parsing']]],
-  ['helpcommand_1',['HelpCommand',['../classHelpCommand.html#ab7d95441e38378d3e395dfacc9784d0d',1,'HelpCommand']]]
+  ['generateusage_0',['generateUsage',['../classParsing.html#ad5f2715d8c0c5d6b95c295c9fafc72c2',1,'Parsing']]]
 ];

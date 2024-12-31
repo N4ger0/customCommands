@@ -2,37 +2,47 @@
 \hypertarget{classParsing}{}\label{classParsing}\index{Parsing@{Parsing}}
 
 
+Class responsible for parsing command-\/line input, managing commands, and handling targets.  
+
+
+
+
 {\ttfamily \#include $<$Parsing.\+h$>$}
 
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classParsing_ababaf37046057a9da442929ea74464b6}{Parsing}} (\mbox{\hyperlink{classTargets}{Targets}} \&\mbox{\hyperlink{classParsing_a4cb9e27a693cb1b388eebaca00d77217}{targets}})
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classParsing}{Parsing} object. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classParsing_aeb1532884f52878ba076dda01080811b}{add\+Command}} (\mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*}command)
-\item 
+\begin{DoxyCompactList}\small\item\em Adds a command to the parser. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classParsing_a60be9a91e4e3b994c724473f1de68133}{parse\+Input}} (int argc, const char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]}) const
-\item 
-std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classParsing_ab052502b0eef7d6a44a23ee671b44a12}{all\+Descriptions}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Parses input arguments and processes commands and targets. \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classParsing_a282159b8d22017890090d600da7fac15}{all\+Command\+Descriptions}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves descriptions of all commands added to the parser. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classParsing_ad5f2715d8c0c5d6b95c295c9fafc72c2}{generate\+Usage}} () const
+\begin{DoxyCompactList}\small\item\em Generates the usage string for the parser. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classParsing_ab2921f8119035ebbf1be0846dec80887}{has\+Command}} (const std\+::string \&name) const
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if a specific command exists in the parser. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classParsing_a36ceff5207de5dba67c82caaabb0e61f}{executable\+Name}} () const
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the executable. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classTargets}{Targets}} \& \mbox{\hyperlink{classParsing_a4cb9e27a693cb1b388eebaca00d77217}{targets}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Retrieves the \doxylink{classTargets}{Targets} object storing parsed targets. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classParsing_aa8177a741578150b599a9153e44da384}{\texorpdfstring{$\sim$}{\string~}\+Parsing}} ()
-\end{DoxyCompactItemize}
-\doxysubsubsection*{Public Attributes}
-\begin{DoxyCompactItemize}
-\item 
-std\+::vector$<$ \mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*} $>$ \mbox{\hyperlink{classParsing_aa92b3790c31ad46adcbaa5a2c26a5f57}{p\+\_\+commands\+To\+Parse}}
-\item 
-std\+::string \mbox{\hyperlink{classParsing_a5475919174ebd04b8277faec3df1e2c5}{exename}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classParsing}{Parsing}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class representing the command parser \begin{DoxyAuthor}{Authors}
-Paul Caillé, Oregan Hardy 
+Class responsible for parsing command-\/line input, managing commands, and handling targets. 
+
+This class represents a command-\/line parser that supports adding commands, parsing input arguments, and managing execution flow. It also validates mandatory commands and organizes the parsed targets.
+
+\begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Paul Caillé
+\item Oregan Hardy 
+\end{DoxyItemize}
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 1.\+0.\+0 
@@ -46,9 +56,13 @@ Paul Caillé, Oregan Hardy
 {\footnotesize\ttfamily \label{classParsing_ababaf37046057a9da442929ea74464b6} 
 Parsing\+::\+Parsing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTargets}{Targets}} \&}]{targets}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
 
-Constructor for a parser 
+
+
+Constructs a \doxylink{classParsing}{Parsing} object. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em targets} & \\
+{\em targets} & A reference to a \doxylink{classTargets}{Targets} object where parsed targets will be stored. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classParsing_aa8177a741578150b599a9153e44da384}\index{Parsing@{Parsing}!````~Parsing@{\texorpdfstring{$\sim$}{\string~}Parsing}}
@@ -57,7 +71,11 @@ Constructor for a parser
 {\footnotesize\ttfamily \label{classParsing_aa8177a741578150b599a9153e44da384} 
 Parsing\+::\texorpdfstring{$\sim$}{\string~}\+Parsing (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 
-Destructor for \doxylink{classParsing}{Parsing} 
+
+
+Destructor for \doxylink{classParsing}{Parsing}. 
+
+Frees the memory allocated for the commands stored in the parser. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classParsing_aeb1532884f52878ba076dda01080811b}\index{Parsing@{Parsing}!addCommand@{addCommand}}
@@ -66,19 +84,59 @@ Destructor for \doxylink{classParsing}{Parsing}
 {\footnotesize\ttfamily \label{classParsing_aeb1532884f52878ba076dda01080811b} 
 void Parsing\+::add\+Command (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*}}]{command}{}\end{DoxyParamCaption})}
 
-Add a command to the parser 
+
+
+Adds a command to the parser. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em command} & \\
+{\em command} & A pointer to the \doxylink{classCommand}{Command} to add. Must not be nullptr. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{classParsing_ab052502b0eef7d6a44a23ee671b44a12}\index{Parsing@{Parsing}!allDescriptions@{allDescriptions}}
-\index{allDescriptions@{allDescriptions}!Parsing@{Parsing}}
-\doxysubsubsection{\texorpdfstring{allDescriptions()}{allDescriptions()}}
-{\footnotesize\ttfamily \label{classParsing_ab052502b0eef7d6a44a23ee671b44a12} 
-std\+::vector$<$ std\+::string $>$ Parsing\+::all\+Descriptions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+\Hypertarget{classParsing_a282159b8d22017890090d600da7fac15}\index{Parsing@{Parsing}!allCommandDescriptions@{allCommandDescriptions}}
+\index{allCommandDescriptions@{allCommandDescriptions}!Parsing@{Parsing}}
+\doxysubsubsection{\texorpdfstring{allCommandDescriptions()}{allCommandDescriptions()}}
+{\footnotesize\ttfamily \label{classParsing_a282159b8d22017890090d600da7fac15} 
+std\+::vector$<$ std\+::string $>$ Parsing\+::all\+Command\+Descriptions (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Return the description of all the commands added to the parser \begin{DoxyReturn}{Returns}
-std\+::vector$<$std\+::string$>$ 
+
+
+Retrieves descriptions of all commands added to the parser. 
+
+Generates a vector of command descriptions, including aliases and their purpose.
+
+\begin{DoxyReturn}{Returns}
+A vector of strings, each containing a command description. 
+\end{DoxyReturn}
+\Hypertarget{classParsing_a36ceff5207de5dba67c82caaabb0e61f}\index{Parsing@{Parsing}!executableName@{executableName}}
+\index{executableName@{executableName}!Parsing@{Parsing}}
+\doxysubsubsection{\texorpdfstring{executableName()}{executableName()}}
+{\footnotesize\ttfamily \label{classParsing_a36ceff5207de5dba67c82caaabb0e61f} 
+std\+::string Parsing\+::executable\+Name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retrieves the name of the executable. 
+
+This is typically the first element in the argument vector.
+
+\begin{DoxyReturn}{Returns}
+A string containing the executable\textquotesingle{}s name. 
+\end{DoxyReturn}
+\Hypertarget{classParsing_ad5f2715d8c0c5d6b95c295c9fafc72c2}\index{Parsing@{Parsing}!generateUsage@{generateUsage}}
+\index{generateUsage@{generateUsage}!Parsing@{Parsing}}
+\doxysubsubsection{\texorpdfstring{generateUsage()}{generateUsage()}}
+{\footnotesize\ttfamily \label{classParsing_ad5f2715d8c0c5d6b95c295c9fafc72c2} 
+std\+::string Parsing\+::generate\+Usage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Generates the usage string for the parser. 
+
+This string details the expected input format, including commands, arguments, and targets.
+
+\begin{DoxyReturn}{Returns}
+A string representing the usage format of the program. 
 \end{DoxyReturn}
 \Hypertarget{classParsing_ab2921f8119035ebbf1be0846dec80887}\index{Parsing@{Parsing}!hasCommand@{hasCommand}}
 \index{hasCommand@{hasCommand}!Parsing@{Parsing}}
@@ -86,13 +144,17 @@ std\+::vector$<$std\+::string$>$
 {\footnotesize\ttfamily \label{classParsing_ab2921f8119035ebbf1be0846dec80887} 
 bool Parsing\+::has\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{}\end{DoxyParamCaption}) const}
 
-Check if the given command name is present in p\+\_\+command\+To\+Parse 
+
+
+Checks if a specific command exists in the parser. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em name} & \\
+{\em name} & The name or alias of the command to check. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-boolean, if the command exist in the parser 
+{\ttfamily true} if the command exists, {\ttfamily false} otherwise. 
 \end{DoxyReturn}
 \Hypertarget{classParsing_a60be9a91e4e3b994c724473f1de68133}\index{Parsing@{Parsing}!parseInput@{parseInput}}
 \index{parseInput@{parseInput}!Parsing@{Parsing}}
@@ -100,38 +162,38 @@ boolean, if the command exist in the parser
 {\footnotesize\ttfamily \label{classParsing_a60be9a91e4e3b994c724473f1de68133} 
 void Parsing\+::parse\+Input (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption}) const}
 
-Main method to parse command 
+
+
+Parses input arguments and processes commands and targets. 
+
+This is the main method for parsing command-\/line input. It organizes commands, validates arguments, and stores targets as needed.
+
+
 \begin{DoxyParams}{Parameters}
-{\em argc} & \\
+{\em argc} & The argument count (from the command line). \\
 \hline
-{\em argv} & \\
+{\em argv} & The argument vector (from the command line). \\
 \hline
 \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if parsing errors occur (e.\+g., unrecognized commands, missing arguments). \\
+\hline
+\end{DoxyExceptions}
 \Hypertarget{classParsing_a4cb9e27a693cb1b388eebaca00d77217}\index{Parsing@{Parsing}!targets@{targets}}
 \index{targets@{targets}!Parsing@{Parsing}}
 \doxysubsubsection{\texorpdfstring{targets()}{targets()}}
 {\footnotesize\ttfamily \label{classParsing_a4cb9e27a693cb1b388eebaca00d77217} 
 const \mbox{\hyperlink{classTargets}{Targets}} \& Parsing\+::targets (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Getter for p\+\_\+targets \begin{DoxyReturn}{Returns}
-Target 
+
+
+Retrieves the \doxylink{classTargets}{Targets} object storing parsed targets. 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the \doxylink{classTargets}{Targets} object. 
 \end{DoxyReturn}
 
-
-\doxysubsection{Member Data Documentation}
-\Hypertarget{classParsing_a5475919174ebd04b8277faec3df1e2c5}\index{Parsing@{Parsing}!exename@{exename}}
-\index{exename@{exename}!Parsing@{Parsing}}
-\doxysubsubsection{\texorpdfstring{exename}{exename}}
-{\footnotesize\ttfamily \label{classParsing_a5475919174ebd04b8277faec3df1e2c5} 
-std\+::string Parsing\+::exename\hspace{0.3cm}{\ttfamily [mutable]}}
-
-Name of the executable \Hypertarget{classParsing_aa92b3790c31ad46adcbaa5a2c26a5f57}\index{Parsing@{Parsing}!p\_commandsToParse@{p\_commandsToParse}}
-\index{p\_commandsToParse@{p\_commandsToParse}!Parsing@{Parsing}}
-\doxysubsubsection{\texorpdfstring{p\_commandsToParse}{p\_commandsToParse}}
-{\footnotesize\ttfamily \label{classParsing_aa92b3790c31ad46adcbaa5a2c26a5f57} 
-std\+::vector$<$\mbox{\hyperlink{classCommand}{Command}} \texorpdfstring{$\ast$}{*}$>$ Parsing\+::p\+\_\+commands\+To\+Parse}
-
-Vector of all commands added to the parser 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

@@ -2,37 +2,47 @@
 \hypertarget{Targets_8h_source}{}\label{Targets_8h_source}\index{target/Targets.h@{target/Targets.h}}
 \mbox{\hyperlink{Targets_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ TARGETS\_H}}
-\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ TARGETS\_H}}
-\DoxyCodeLine{00003\ }
-\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <string>}}
-\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTargets_a4a5f59091839ef08952c52a495a45540}{Targets}}\ \{}
-\DoxyCodeLine{00016\ \ \ \ \ std::string\ t\_description;}
-\DoxyCodeLine{00020\ \ \ \ \ std::vector<std::string>\ t\_targs;}
-\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{bool}\ t\_canBeEmpty;}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00026\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classTargets_ac745989014e21bc72bebbe5ce6680998}{const\_iterator}}\ =\ std::vector<std::string>::const\_iterator;}
-\DoxyCodeLine{00028\ }
-\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{classTargets_a4a5f59091839ef08952c52a495a45540}{Targets}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTargets_a5fc7032f0be9651a4810f988ab6302b7}{canBeEmpty}},\ \textcolor{keyword}{const}\ std::string\ \&description);}
-\DoxyCodeLine{00035\ }
-\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTargets_a5fc7032f0be9651a4810f988ab6302b7}{canBeEmpty}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00041\ }
-\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\mbox{\hyperlink{classTargets_abd0b174f61bef8a67038f8ef3587da88}{targets}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTargets_a8d73a746bb50bd0a98575e970a77b20b}{addTarget}}(\textcolor{keyword}{const}\ std::string\ \&targ);}
-\DoxyCodeLine{00053\ }
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTargets_a37bd492fc14074396be03dba9f76f944}{empty}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{classTargets_ac745989014e21bc72bebbe5ce6680998}{const\_iterator}}\ \mbox{\hyperlink{classTargets_a35eb3b6a7cedbcf682cbacc62b93e4e9}{begin}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00061\ }
-\DoxyCodeLine{00062\ \ \ \ \ \mbox{\hyperlink{classTargets_ac745989014e21bc72bebbe5ce6680998}{const\_iterator}}\ \mbox{\hyperlink{classTargets_a846688592dcdb8706b90c1aea295542f}{end}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classTargets_ac88dce3aac48be4e03fdbdeee494774f}{operator<<}}(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTargets_a4a5f59091839ef08952c52a495a45540}{Targets}}\ \&\mbox{\hyperlink{classTargets_abd0b174f61bef8a67038f8ef3587da88}{targets}});}
-\DoxyCodeLine{00065\ \};}
-\DoxyCodeLine{00066\ }
-\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TARGETS\_H}}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ on\ 29/11/2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ CAILLE\ /\ HARDY}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ PAUL\ /\ OREGAN}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ M1\ -\/\ CL}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ TARGETS\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ TARGETS\_H}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <ostream>}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classTargets_a4a5f59091839ef08952c52a495a45540}{Targets}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ std::string\ t\_description;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<std::string>\ t\_targs;}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ t\_canBeEmpty;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keyword}{using\ }\mbox{\hyperlink{classTargets_ac745989014e21bc72bebbe5ce6680998}{const\_iterator}}\ =\ std::vector<std::string>::const\_iterator;}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00056\ \ \ \ \ \mbox{\hyperlink{classTargets_a4a5f59091839ef08952c52a495a45540}{Targets}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTargets_a5fc7032f0be9651a4810f988ab6302b7}{canBeEmpty}},\ \textcolor{keyword}{const}\ std::string\ \&description);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTargets_a5fc7032f0be9651a4810f988ab6302b7}{canBeEmpty}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\mbox{\hyperlink{classTargets_abd0b174f61bef8a67038f8ef3587da88}{targets}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00077\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classTargets_a8d73a746bb50bd0a98575e970a77b20b}{addTarget}}(\textcolor{keyword}{const}\ std::string\ \&targ);}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classTargets_a37bd492fc14074396be03dba9f76f944}{empty}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \mbox{\hyperlink{classTargets_ac745989014e21bc72bebbe5ce6680998}{const\_iterator}}\ \mbox{\hyperlink{classTargets_a35eb3b6a7cedbcf682cbacc62b93e4e9}{begin}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classTargets_ac745989014e21bc72bebbe5ce6680998}{const\_iterator}}\ \mbox{\hyperlink{classTargets_a846688592dcdb8706b90c1aea295542f}{end}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classTargets_ac88dce3aac48be4e03fdbdeee494774f}{operator<<}}(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTargets_a4a5f59091839ef08952c52a495a45540}{Targets}}\ \&\mbox{\hyperlink{classTargets_abd0b174f61bef8a67038f8ef3587da88}{targets}});}
+\DoxyCodeLine{00110\ \};}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ TARGETS\_H}}
 
 \end{DoxyCode}

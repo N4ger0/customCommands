@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['setarguments_0',['setArguments',['../classCommand.html#a760baf7456433e82703600fa73a0ac74',1,'Command::setArguments()'],['../classHelpCommand.html#aeecc5db9e276e2933a3eb2497891be58',1,'HelpCommand::setArguments()']]]
+  ['parseinput_0',['parseInput',['../classParsing.html#a60be9a91e4e3b994c724473f1de68133',1,'Parsing']]],
+  ['parsing_1',['Parsing',['../classParsing.html#ababaf37046057a9da442929ea74464b6',1,'Parsing']]]
 ];

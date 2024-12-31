@@ -106,49 +106,59 @@ $(function(){initNavTree('Targets_8h_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Targets.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="Targets_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef TARGETS_H</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define TARGETS_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classTargets.html">   12</a></span><span class="keyword">class </span><a class="code hl_function" href="classTargets.html#a4a5f59091839ef08952c52a495a45540">Targets</a> {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    std::string t_description;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::vector&lt;std::string&gt; t_targs;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">bool</span> t_canBeEmpty;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classTargets.html#ac745989014e21bc72bebbe5ce6680998">   27</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classTargets.html#ac745989014e21bc72bebbe5ce6680998">const_iterator</a> = std::vector&lt;std::string&gt;::const_iterator;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="classTargets.html#a4a5f59091839ef08952c52a495a45540">Targets</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="classTargets.html#a5fc7032f0be9651a4810f988ab6302b7">canBeEmpty</a>, <span class="keyword">const</span> std::string &amp;description);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classTargets.html#a5fc7032f0be9651a4810f988ab6302b7">canBeEmpty</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;<a class="code hl_function" href="classTargets.html#abd0b174f61bef8a67038f8ef3587da88">targets</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTargets.html#a8d73a746bb50bd0a98575e970a77b20b">addTarget</a>(<span class="keyword">const</span> std::string &amp;targ);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classTargets.html#a37bd492fc14074396be03dba9f76f944">empty</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_typedef" href="classTargets.html#ac745989014e21bc72bebbe5ce6680998">const_iterator</a> <a class="code hl_function" href="classTargets.html#a35eb3b6a7cedbcf682cbacc62b93e4e9">begin</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_typedef" href="classTargets.html#ac745989014e21bc72bebbe5ce6680998">const_iterator</a> <a class="code hl_function" href="classTargets.html#a846688592dcdb8706b90c1aea295542f">end</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">friend</span> std::ostream &amp;<a class="code hl_friend" href="classTargets.html#ac88dce3aac48be4e03fdbdeee494774f">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code hl_function" href="classTargets.html#a4a5f59091839ef08952c52a495a45540">Targets</a> &amp;<a class="code hl_function" href="classTargets.html#abd0b174f61bef8a67038f8ef3587da88">targets</a>);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
+<a href="Targets_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">//</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// Created on 29/11/2024.</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// CAILLE / HARDY</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// PAUL / OREGAN</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// M1 - CL</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">//</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifndef TARGETS_H</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#define TARGETS_H</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;ostream&gt;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span></div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classTargets.html">   28</a></span><span class="keyword">class </span><a class="code hl_function" href="classTargets.html#a4a5f59091839ef08952c52a495a45540">Targets</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::string t_description;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    std::vector&lt;std::string&gt; t_targs;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">bool</span> t_canBeEmpty;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classTargets.html#ac745989014e21bc72bebbe5ce6680998">   48</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classTargets.html#ac745989014e21bc72bebbe5ce6680998">const_iterator</a> = std::vector&lt;std::string&gt;::const_iterator;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <a class="code hl_function" href="classTargets.html#a4a5f59091839ef08952c52a495a45540">Targets</a>(<span class="keywordtype">bool</span> <a class="code hl_function" href="classTargets.html#a5fc7032f0be9651a4810f988ab6302b7">canBeEmpty</a>, <span class="keyword">const</span> std::string &amp;description);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classTargets.html#a5fc7032f0be9651a4810f988ab6302b7">canBeEmpty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keyword">const</span> std::vector&lt;std::string&gt; &amp;<a class="code hl_function" href="classTargets.html#abd0b174f61bef8a67038f8ef3587da88">targets</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classTargets.html#a8d73a746bb50bd0a98575e970a77b20b">addTarget</a>(<span class="keyword">const</span> std::string &amp;targ);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classTargets.html#a37bd492fc14074396be03dba9f76f944">empty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_typedef" href="classTargets.html#ac745989014e21bc72bebbe5ce6680998">const_iterator</a> <a class="code hl_function" href="classTargets.html#a35eb3b6a7cedbcf682cbacc62b93e4e9">begin</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <a class="code hl_typedef" href="classTargets.html#ac745989014e21bc72bebbe5ce6680998">const_iterator</a> <a class="code hl_function" href="classTargets.html#a846688592dcdb8706b90c1aea295542f">end</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">friend</span> std::ostream &amp;<a class="code hl_friend" href="classTargets.html#ac88dce3aac48be4e03fdbdeee494774f">operator&lt;&lt;</a>(std::ostream &amp;os, <span class="keyword">const</span> <a class="code hl_function" href="classTargets.html#a4a5f59091839ef08952c52a495a45540">Targets</a> &amp;<a class="code hl_function" href="classTargets.html#abd0b174f61bef8a67038f8ef3587da88">targets</a>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>};</div>
 </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#endif </span><span class="comment">// TARGETS_H</span></div>
-<div class="ttc" id="aclassTargets_html_a35eb3b6a7cedbcf682cbacc62b93e4e9"><div class="ttname"><a href="classTargets.html#a35eb3b6a7cedbcf682cbacc62b93e4e9">Targets::begin</a></div><div class="ttdeci">const_iterator begin() const</div><div class="ttdef"><b>Definition</b> Targets.cpp:32</div></div>
-<div class="ttc" id="aclassTargets_html_a37bd492fc14074396be03dba9f76f944"><div class="ttname"><a href="classTargets.html#a37bd492fc14074396be03dba9f76f944">Targets::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdef"><b>Definition</b> Targets.cpp:28</div></div>
-<div class="ttc" id="aclassTargets_html_a4a5f59091839ef08952c52a495a45540"><div class="ttname"><a href="classTargets.html#a4a5f59091839ef08952c52a495a45540">Targets::Targets</a></div><div class="ttdeci">Targets(bool canBeEmpty, const std::string &amp;description)</div><div class="ttdef"><b>Definition</b> Targets.cpp:12</div></div>
-<div class="ttc" id="aclassTargets_html_a5fc7032f0be9651a4810f988ab6302b7"><div class="ttname"><a href="classTargets.html#a5fc7032f0be9651a4810f988ab6302b7">Targets::canBeEmpty</a></div><div class="ttdeci">bool canBeEmpty() const</div><div class="ttdef"><b>Definition</b> Targets.cpp:16</div></div>
-<div class="ttc" id="aclassTargets_html_a846688592dcdb8706b90c1aea295542f"><div class="ttname"><a href="classTargets.html#a846688592dcdb8706b90c1aea295542f">Targets::end</a></div><div class="ttdeci">const_iterator end() const</div><div class="ttdef"><b>Definition</b> Targets.cpp:36</div></div>
-<div class="ttc" id="aclassTargets_html_a8d73a746bb50bd0a98575e970a77b20b"><div class="ttname"><a href="classTargets.html#a8d73a746bb50bd0a98575e970a77b20b">Targets::addTarget</a></div><div class="ttdeci">void addTarget(const std::string &amp;targ)</div><div class="ttdef"><b>Definition</b> Targets.cpp:24</div></div>
-<div class="ttc" id="aclassTargets_html_abd0b174f61bef8a67038f8ef3587da88"><div class="ttname"><a href="classTargets.html#abd0b174f61bef8a67038f8ef3587da88">Targets::targets</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; targets() const</div><div class="ttdef"><b>Definition</b> Targets.cpp:20</div></div>
-<div class="ttc" id="aclassTargets_html_ac745989014e21bc72bebbe5ce6680998"><div class="ttname"><a href="classTargets.html#ac745989014e21bc72bebbe5ce6680998">Targets::const_iterator</a></div><div class="ttdeci">std::vector&lt; std::string &gt;::const_iterator const_iterator</div><div class="ttdef"><b>Definition</b> Targets.h:27</div></div>
-<div class="ttc" id="aclassTargets_html_ac88dce3aac48be4e03fdbdeee494774f"><div class="ttname"><a href="classTargets.html#ac88dce3aac48be4e03fdbdeee494774f">Targets::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Targets &amp;targets)</div><div class="ttdef"><b>Definition</b> Targets.cpp:40</div></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#endif </span><span class="comment">// TARGETS_H</span></div>
+<div class="ttc" id="aclassTargets_html_a35eb3b6a7cedbcf682cbacc62b93e4e9"><div class="ttname"><a href="classTargets.html#a35eb3b6a7cedbcf682cbacc62b93e4e9">Targets::begin</a></div><div class="ttdeci">const_iterator begin() const</div><div class="ttdoc">Returns an iterator pointing to the beginning of the targets list.</div><div class="ttdef"><b>Definition</b> Targets.cpp:32</div></div>
+<div class="ttc" id="aclassTargets_html_a37bd492fc14074396be03dba9f76f944"><div class="ttname"><a href="classTargets.html#a37bd492fc14074396be03dba9f76f944">Targets::empty</a></div><div class="ttdeci">bool empty() const</div><div class="ttdoc">Checks if the targets list is empty.</div><div class="ttdef"><b>Definition</b> Targets.cpp:28</div></div>
+<div class="ttc" id="aclassTargets_html_a4a5f59091839ef08952c52a495a45540"><div class="ttname"><a href="classTargets.html#a4a5f59091839ef08952c52a495a45540">Targets::Targets</a></div><div class="ttdeci">Targets(bool canBeEmpty, const std::string &amp;description)</div><div class="ttdoc">Constructs a Targets object.</div><div class="ttdef"><b>Definition</b> Targets.cpp:12</div></div>
+<div class="ttc" id="aclassTargets_html_a5fc7032f0be9651a4810f988ab6302b7"><div class="ttname"><a href="classTargets.html#a5fc7032f0be9651a4810f988ab6302b7">Targets::canBeEmpty</a></div><div class="ttdeci">bool canBeEmpty() const</div><div class="ttdoc">Checks if the targets list can be empty.</div><div class="ttdef"><b>Definition</b> Targets.cpp:16</div></div>
+<div class="ttc" id="aclassTargets_html_a846688592dcdb8706b90c1aea295542f"><div class="ttname"><a href="classTargets.html#a846688592dcdb8706b90c1aea295542f">Targets::end</a></div><div class="ttdeci">const_iterator end() const</div><div class="ttdoc">Returns an iterator pointing to the end of the targets list.</div><div class="ttdef"><b>Definition</b> Targets.cpp:36</div></div>
+<div class="ttc" id="aclassTargets_html_a8d73a746bb50bd0a98575e970a77b20b"><div class="ttname"><a href="classTargets.html#a8d73a746bb50bd0a98575e970a77b20b">Targets::addTarget</a></div><div class="ttdeci">void addTarget(const std::string &amp;targ)</div><div class="ttdoc">Adds a new target to the list of targets.</div><div class="ttdef"><b>Definition</b> Targets.cpp:24</div></div>
+<div class="ttc" id="aclassTargets_html_abd0b174f61bef8a67038f8ef3587da88"><div class="ttname"><a href="classTargets.html#abd0b174f61bef8a67038f8ef3587da88">Targets::targets</a></div><div class="ttdeci">const std::vector&lt; std::string &gt; &amp; targets() const</div><div class="ttdoc">Retrieves the list of targets.</div><div class="ttdef"><b>Definition</b> Targets.cpp:20</div></div>
+<div class="ttc" id="aclassTargets_html_ac745989014e21bc72bebbe5ce6680998"><div class="ttname"><a href="classTargets.html#ac745989014e21bc72bebbe5ce6680998">Targets::const_iterator</a></div><div class="ttdeci">std::vector&lt; std::string &gt;::const_iterator const_iterator</div><div class="ttdoc">Type alias for a constant iterator over the targets vector.</div><div class="ttdef"><b>Definition</b> Targets.h:48</div></div>
+<div class="ttc" id="aclassTargets_html_ac88dce3aac48be4e03fdbdeee494774f"><div class="ttname"><a href="classTargets.html#ac88dce3aac48be4e03fdbdeee494774f">Targets::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;os, const Targets &amp;targets)</div><div class="ttdoc">Overloads the &lt;&lt; operator to print the targets.</div><div class="ttdef"><b>Definition</b> Targets.cpp:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

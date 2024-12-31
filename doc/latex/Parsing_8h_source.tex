@@ -4,8 +4,8 @@
 \begin{DoxyCode}{0}
 \DoxyCodeLine{00001\ \textcolor{comment}{//}}
 \DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ on\ 29/11/2024.}}
-\DoxyCodeLine{00003\ \textcolor{comment}{//\ CAILLE}}
-\DoxyCodeLine{00004\ \textcolor{comment}{//\ PAUL}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ CAILLE\ /\ HARDY}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ PAUL\ /\ OREGAN}}
 \DoxyCodeLine{00005\ \textcolor{comment}{//\ M1\ -\/\ CL}}
 \DoxyCodeLine{00006\ \textcolor{comment}{//}}
 \DoxyCodeLine{00007\ }
@@ -16,36 +16,40 @@
 \DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Command_8h}{../commands/Command.h}}"{}}}
 \DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Targets_8h}{../target/Targets.h}}"{}}}
 \DoxyCodeLine{00014\ }
-\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classParsing_ababaf37046057a9da442929ea74464b6}{Parsing}}\ \{}
-\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{classTargets}{Targets}}\ \&p\_targets;}
-\DoxyCodeLine{00025\ }
-\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{classCommand}{Command}}\ *findCommand(\textcolor{keyword}{const}\ std::string\ \&name)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{void}\ executeAll()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classParsing_ababaf37046057a9da442929ea74464b6}{Parsing}}\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{classTargets}{Targets}}\ \&p\_targets;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ std::vector<Command\ *>\ p\_commandsToParse;}
 \DoxyCodeLine{00038\ }
-\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkMissingMandatory(\textcolor{keyword}{const}\ std::vector<std::string>\ \&inputParts)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00045\ }
-\DoxyCodeLine{00046\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00050\ \ \ \ \ std::vector<Command\ *>\ \mbox{\hyperlink{classParsing_aa92b3790c31ad46adcbaa5a2c26a5f57}{p\_commandsToParse}};}
-\DoxyCodeLine{00051\ }
-\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{mutable}\ std::string\ \mbox{\hyperlink{classParsing_a5475919174ebd04b8277faec3df1e2c5}{exename}}\ ;}
-\DoxyCodeLine{00056\ }
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classParsing_ababaf37046057a9da442929ea74464b6}{Parsing}}(\mbox{\hyperlink{classTargets}{Targets}}\ \&\mbox{\hyperlink{classParsing_a4cb9e27a693cb1b388eebaca00d77217}{targets}});}
-\DoxyCodeLine{00062\ }
-\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParsing_aeb1532884f52878ba076dda01080811b}{addCommand}}(\mbox{\hyperlink{classCommand}{Command}}\ *command);}
-\DoxyCodeLine{00068\ }
-\DoxyCodeLine{00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParsing_a60be9a91e4e3b994c724473f1de68133}{parseInput}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *argv[])\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00075\ }
-\DoxyCodeLine{00080\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classParsing_ab052502b0eef7d6a44a23ee671b44a12}{allDescriptions}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00081\ }
-\DoxyCodeLine{00087\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classParsing_ab2921f8119035ebbf1be0846dec80887}{hasCommand}}(\textcolor{keyword}{const}\ std::string\ \&name)\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00088\ }
-\DoxyCodeLine{00093\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTargets}{Targets}}\ \&\mbox{\hyperlink{classParsing_a4cb9e27a693cb1b388eebaca00d77217}{targets}}()\ \textcolor{keyword}{const};}
-\DoxyCodeLine{00094\ }
-\DoxyCodeLine{00098\ \ \ \ \ \mbox{\hyperlink{classParsing_aa8177a741578150b599a9153e44da384}{\string~Parsing}}();}
-\DoxyCodeLine{00099\ \};}
-\DoxyCodeLine{00100\ }
-\DoxyCodeLine{00101\ }
-\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PARSING\_H}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{mutable}\ std::string\ p\_exename;}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00052\ \ \ \ \ \mbox{\hyperlink{classCommand}{Command}}\ *findCommand(\textcolor{keyword}{const}\ std::string\ \&name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ executeAll()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkMissingMandatory(\textcolor{keyword}{const}\ std::vector<std::string>\ \&inputParts)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classParsing_ababaf37046057a9da442929ea74464b6}{Parsing}}(\mbox{\hyperlink{classTargets}{Targets}}\ \&\mbox{\hyperlink{classParsing_a4cb9e27a693cb1b388eebaca00d77217}{targets}});}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParsing_aeb1532884f52878ba076dda01080811b}{addCommand}}(\mbox{\hyperlink{classCommand}{Command}}\ *command);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classParsing_a60be9a91e4e3b994c724473f1de68133}{parseInput}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *argv[])\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00106\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classParsing_a282159b8d22017890090d600da7fac15}{allCommandDescriptions}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00115\ \ \ \ \ std::string\ \mbox{\hyperlink{classParsing_ad5f2715d8c0c5d6b95c295c9fafc72c2}{generateUsage}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00123\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classParsing_ab2921f8119035ebbf1be0846dec80887}{hasCommand}}(\textcolor{keyword}{const}\ std::string\ \&name)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00124\ }
+\DoxyCodeLine{00132\ \ \ \ \ std::string\ \mbox{\hyperlink{classParsing_a36ceff5207de5dba67c82caaabb0e61f}{executableName}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classTargets}{Targets}}\ \&\mbox{\hyperlink{classParsing_a4cb9e27a693cb1b388eebaca00d77217}{targets}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00146\ \ \ \ \ \mbox{\hyperlink{classParsing_aa8177a741578150b599a9153e44da384}{\string~Parsing}}();}
+\DoxyCodeLine{00147\ \};}
+\DoxyCodeLine{00148\ }
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//PARSING\_H}}
 
 \end{DoxyCode}

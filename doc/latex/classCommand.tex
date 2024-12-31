@@ -2,6 +2,11 @@
 \hypertarget{classCommand}{}\label{classCommand}\index{Command@{Command}}
 
 
+Represents a command in the parser framework.  
+
+
+
+
 {\ttfamily \#include $<$Command.\+h$>$}
 
 Inheritance diagram for Command\+:\begin{figure}[H]
@@ -14,45 +19,53 @@ Inheritance diagram for Command\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classCommand_a86cf97057e2bee28e90ccefeca1079c7}{Command}} (const std\+::string \&\mbox{\hyperlink{classCommand_adf90b3f0915e5afeb1e8a9ba12be4c94}{name}}, const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{classCommand_a1fa000e8c5a5db4b4ec4322098aa250d}{aliases}}, size\+\_\+t nb\+Of\+Arguments, const std\+::string \&\mbox{\hyperlink{classCommand_afc493f033e1b89412f07874de6752611}{description}}, bool is\+Mandatory, bool activate\+Immediately)
-\item 
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classCommand}{Command} object. \end{DoxyCompactList}\item 
 virtual \mbox{\hyperlink{classCommand_aa545a53d35818f9efb936daf3fa16c61}{\texorpdfstring{$\sim$}{\string~}\+Command}} ()=default
-\item 
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classCommand}{Command}. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classCommand_a760baf7456433e82703600fa73a0ac74}{set\+Arguments}} (const std\+::vector$<$ std\+::string $>$ \&args)=0
-\item 
+\begin{DoxyCompactList}\small\item\em Sets the arguments parsed by the parser. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{execute}} ()=0
-\item 
+\begin{DoxyCompactList}\small\item\em Executes the command\textquotesingle{}s main logic. \end{DoxyCompactList}\item 
 const std\+::string \& \mbox{\hyperlink{classCommand_adf90b3f0915e5afeb1e8a9ba12be4c94}{name}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the command. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classCommand_afc493f033e1b89412f07874de6752611}{description}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Retrieves a formatted description of the command. \end{DoxyCompactList}\item 
 const std\+::vector$<$ std\+::string $>$ \& \mbox{\hyperlink{classCommand_a1fa000e8c5a5db4b4ec4322098aa250d}{aliases}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Retrieves the aliases of the command. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classCommand_a20bbea1957ab35dd5c81c906f741c016}{is\+Mandatory\+Command}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the command is mandatory. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classCommand_aa35dd25f37bff027626e1b02096e5f3f}{executes\+Now}} () const
-\item 
+\begin{DoxyCompactList}\small\item\em Checks if the command is set to execute immediately after parsing. \end{DoxyCompactList}\item 
 std\+::size\+\_\+t \mbox{\hyperlink{classCommand_a6feaa3ded84fb0d1828fb9cef6a56e38}{nb\+Arguments}} () const
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Retrieves the number of arguments required by the command. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::string \mbox{\hyperlink{classCommand_aed9e6d920692bae608d85639c8673337}{c\+\_\+name}}
-\item 
+\begin{DoxyCompactList}\small\item\em The primary name of the command. \end{DoxyCompactList}\item 
 std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classCommand_acf9ba53d7b04258e5b3c5aa6b67cc1d8}{c\+\_\+aliases}}
-\item 
+\begin{DoxyCompactList}\small\item\em A list of aliases for the command. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{classCommand_a306ecd3909d2b319921e0fa5818c1c69}{c\+\_\+nb\+Of\+Arguments}}
-\item 
+\begin{DoxyCompactList}\small\item\em The number of arguments the command expects. \end{DoxyCompactList}\item 
 std\+::string \mbox{\hyperlink{classCommand_ae17af463efac5856b438f3caa9d4f143}{c\+\_\+description}}
-\item 
+\begin{DoxyCompactList}\small\item\em A short description of the command, displayed in the help menu. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classCommand_a641e5155dd27a4fdf3e98574e69ce437}{c\+\_\+is\+Mandatory}}
-\item 
+\begin{DoxyCompactList}\small\item\em Indicates if the command is mandatory. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classCommand_a4d6455b6cf44c696af0d283ca767f66e}{c\+\_\+activate\+Immediately}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Determines if the command can be executed immediately after being parsed. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Class representing a \doxylink{classCommand}{Command} of the parser \begin{DoxyAuthor}{Authors}
-Paul Caillé, Oregan Hardy 
+Represents a command in the parser framework. 
+
+This abstract class serves as a base for creating commands that can be parsed, validated, and executed by the parser. Each command can have aliases, a description, arguments, and specific execution behavior.
+
+\begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Paul Caillé
+\item Oregan Hardy 
+\end{DoxyItemize}
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 1.\+0.\+0 
@@ -66,19 +79,23 @@ Paul Caillé, Oregan Hardy
 {\footnotesize\ttfamily \label{classCommand_a86cf97057e2bee28e90ccefeca1079c7} 
 Command\+::\+Command (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name}{, }\item[{const std\+::vector$<$ std\+::string $>$ \&}]{aliases}{, }\item[{size\+\_\+t}]{nb\+Of\+Arguments}{, }\item[{const std\+::string \&}]{description}{, }\item[{bool}]{is\+Mandatory}{, }\item[{bool}]{activate\+Immediately}{}\end{DoxyParamCaption})}
 
-Constructor of a \doxylink{classCommand}{Command} 
+
+
+Constructs a new \doxylink{classCommand}{Command} object. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em name} & name of the \doxylink{classCommand}{Command} \\
+{\em name} & The primary name of the command. \\
 \hline
-{\em aliases} & vector of string contained in c\+\_\+aliases \\
+{\em aliases} & A vector of aliases for the command. \\
 \hline
-{\em nb\+Of\+Arguments} & number of argument taken by the \doxylink{classCommand}{Command} \\
+{\em nb\+Of\+Arguments} & The number of arguments required by the command. \\
 \hline
-{\em description} & description of the class, displayed by help \\
+{\em description} & A description of the command\textquotesingle{}s functionality. \\
 \hline
-{\em is\+Mandatory} & if the command is mandatory \\
+{\em is\+Mandatory} & Whether the command is mandatory. \\
 \hline
-{\em activate\+Immediately} & if the command can be executed directly when parsed \\
+{\em activate\+Immediately} & Whether the command can execute directly upon parsing. \\
 \hline
 \end{DoxyParams}
 \Hypertarget{classCommand_aa545a53d35818f9efb936daf3fa16c61}\index{Command@{Command}!````~Command@{\texorpdfstring{$\sim$}{\string~}Command}}
@@ -87,7 +104,11 @@ Constructor of a \doxylink{classCommand}{Command}
 {\footnotesize\ttfamily \label{classCommand_aa545a53d35818f9efb936daf3fa16c61} 
 virtual Command\+::\texorpdfstring{$\sim$}{\string~}\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
 
-Destructor of a \doxylink{classCommand}{Command}, used by the desctructor of \doxylink{classParsing}{Parsing} 
+
+
+Virtual destructor for \doxylink{classCommand}{Command}. 
+
+The {\ttfamily \doxylink{classParsing}{Parsing}} class deletes commands when it is destroyed. 
 
 \doxysubsection{Member Function Documentation}
 \Hypertarget{classCommand_a1fa000e8c5a5db4b4ec4322098aa250d}\index{Command@{Command}!aliases@{aliases}}
@@ -96,8 +117,12 @@ Destructor of a \doxylink{classCommand}{Command}, used by the desctructor of \do
 {\footnotesize\ttfamily \label{classCommand_a1fa000e8c5a5db4b4ec4322098aa250d} 
 const std\+::vector$<$ std\+::string $>$ \& Command\+::aliases (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Getter for c\+\_\+aliases \begin{DoxyReturn}{Returns}
-std\+::vector$<$std\+::string$>$ 
+
+
+Retrieves the aliases of the command. 
+
+\begin{DoxyReturn}{Returns}
+A constant reference to the vector of aliases. 
 \end{DoxyReturn}
 \Hypertarget{classCommand_afc493f033e1b89412f07874de6752611}\index{Command@{Command}!description@{description}}
 \index{description@{description}!Command@{Command}}
@@ -105,8 +130,14 @@ std\+::vector$<$std\+::string$>$
 {\footnotesize\ttfamily \label{classCommand_afc493f033e1b89412f07874de6752611} 
 std\+::string Command\+::description (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Getter for c\+\_\+destruction \begin{DoxyReturn}{Returns}
-std\+::string 
+
+
+Retrieves a formatted description of the command. 
+
+Combines the name, aliases, and description into a single string.
+
+\begin{DoxyReturn}{Returns}
+A string containing the command description. 
 \end{DoxyReturn}
 \Hypertarget{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}\index{Command@{Command}!execute@{execute}}
 \index{execute@{execute}!Command@{Command}}
@@ -114,7 +145,11 @@ std\+::string
 {\footnotesize\ttfamily \label{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7} 
 virtual void Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Method launched by Parser, main execution of the command 
+
+
+Executes the command\textquotesingle{}s main logic. 
+
+This is invoked by the parser after validation. 
 
 Implemented in \mbox{\hyperlink{classHelpCommand_ae937e50237b12328bfbd4526caf7f47e}{Help\+Command}}.
 
@@ -124,8 +159,12 @@ Implemented in \mbox{\hyperlink{classHelpCommand_ae937e50237b12328bfbd4526caf7f4
 {\footnotesize\ttfamily \label{classCommand_aa35dd25f37bff027626e1b02096e5f3f} 
 bool Command\+::executes\+Now (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Getter for c\+\_\+activate\+Immediately \begin{DoxyReturn}{Returns}
-bool 
+
+
+Checks if the command is set to execute immediately after parsing. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the command executes immediately, {\ttfamily false} otherwise. 
 \end{DoxyReturn}
 \Hypertarget{classCommand_a20bbea1957ab35dd5c81c906f741c016}\index{Command@{Command}!isMandatoryCommand@{isMandatoryCommand}}
 \index{isMandatoryCommand@{isMandatoryCommand}!Command@{Command}}
@@ -133,8 +172,12 @@ bool
 {\footnotesize\ttfamily \label{classCommand_a20bbea1957ab35dd5c81c906f741c016} 
 bool Command\+::is\+Mandatory\+Command (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Getter for c\+\_\+is\+Mandatory \begin{DoxyReturn}{Returns}
-bool 
+
+
+Checks if the command is mandatory. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the command is mandatory, {\ttfamily false} otherwise. 
 \end{DoxyReturn}
 \Hypertarget{classCommand_adf90b3f0915e5afeb1e8a9ba12be4c94}\index{Command@{Command}!name@{name}}
 \index{name@{name}!Command@{Command}}
@@ -142,8 +185,12 @@ bool
 {\footnotesize\ttfamily \label{classCommand_adf90b3f0915e5afeb1e8a9ba12be4c94} 
 const std\+::string \& Command\+::name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Getter for c\+\_\+name \begin{DoxyReturn}{Returns}
-std\+::string 
+
+
+Retrieves the name of the command. 
+
+\begin{DoxyReturn}{Returns}
+The name of the command as a string. 
 \end{DoxyReturn}
 \Hypertarget{classCommand_a6feaa3ded84fb0d1828fb9cef6a56e38}\index{Command@{Command}!nbArguments@{nbArguments}}
 \index{nbArguments@{nbArguments}!Command@{Command}}
@@ -151,8 +198,12 @@ std\+::string
 {\footnotesize\ttfamily \label{classCommand_a6feaa3ded84fb0d1828fb9cef6a56e38} 
 std\+::size\+\_\+t Command\+::nb\+Arguments (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
 
-Getter for c\+\_\+nb\+Of\+Arguments \begin{DoxyReturn}{Returns}
-std\+::size\+\_\+t 
+
+
+Retrieves the number of arguments required by the command. 
+
+\begin{DoxyReturn}{Returns}
+The number of arguments as a {\ttfamily size\+\_\+t}. 
 \end{DoxyReturn}
 \Hypertarget{classCommand_a760baf7456433e82703600fa73a0ac74}\index{Command@{Command}!setArguments@{setArguments}}
 \index{setArguments@{setArguments}!Command@{Command}}
@@ -160,9 +211,13 @@ std\+::size\+\_\+t
 {\footnotesize\ttfamily \label{classCommand_a760baf7456433e82703600fa73a0ac74} 
 virtual void Command\+::set\+Arguments (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
-Set arguments parsed by Parser in the \doxylink{classCommand}{Command} 
+
+
+Sets the arguments parsed by the parser. 
+
+
 \begin{DoxyParams}{Parameters}
-{\em args} & \\
+{\em args} & A vector of arguments to set. \\
 \hline
 \end{DoxyParams}
 
@@ -178,37 +233,61 @@ Implemented in \mbox{\hyperlink{classHelpCommand_aeecc5db9e276e2933a3eb2497891be
 {\footnotesize\ttfamily \label{classCommand_a4d6455b6cf44c696af0d283ca767f66e} 
 bool Command\+::c\+\_\+activate\+Immediately\hspace{0.3cm}{\ttfamily [protected]}}
 
-If the command can be executed immediately after being parsed \doxylink{classCommand}{Command} using \doxylink{classTargets}{Targets} object must be at false \Hypertarget{classCommand_acf9ba53d7b04258e5b3c5aa6b67cc1d8}\index{Command@{Command}!c\_aliases@{c\_aliases}}
+
+
+Determines if the command can be executed immediately after being parsed. 
+
+\Hypertarget{classCommand_acf9ba53d7b04258e5b3c5aa6b67cc1d8}\index{Command@{Command}!c\_aliases@{c\_aliases}}
 \index{c\_aliases@{c\_aliases}!Command@{Command}}
 \doxysubsubsection{\texorpdfstring{c\_aliases}{c\_aliases}}
 {\footnotesize\ttfamily \label{classCommand_acf9ba53d7b04258e5b3c5aa6b67cc1d8} 
 std\+::vector$<$std\+::string$>$ Command\+::c\+\_\+aliases\hspace{0.3cm}{\ttfamily [protected]}}
 
-Vector of the aliases for the command, must start with "{}-\/"{} or "{}-\/-\/"{} for long name \Hypertarget{classCommand_ae17af463efac5856b438f3caa9d4f143}\index{Command@{Command}!c\_description@{c\_description}}
+
+
+A list of aliases for the command. 
+
+Aliases must begin with "{}-\/"{} for short names; \Hypertarget{classCommand_ae17af463efac5856b438f3caa9d4f143}\index{Command@{Command}!c\_description@{c\_description}}
 \index{c\_description@{c\_description}!Command@{Command}}
 \doxysubsubsection{\texorpdfstring{c\_description}{c\_description}}
 {\footnotesize\ttfamily \label{classCommand_ae17af463efac5856b438f3caa9d4f143} 
 std\+::string Command\+::c\+\_\+description\hspace{0.3cm}{\ttfamily [protected]}}
 
-Description of the command displayed by help \Hypertarget{classCommand_a641e5155dd27a4fdf3e98574e69ce437}\index{Command@{Command}!c\_isMandatory@{c\_isMandatory}}
+
+
+A short description of the command, displayed in the help menu. 
+
+\Hypertarget{classCommand_a641e5155dd27a4fdf3e98574e69ce437}\index{Command@{Command}!c\_isMandatory@{c\_isMandatory}}
 \index{c\_isMandatory@{c\_isMandatory}!Command@{Command}}
 \doxysubsubsection{\texorpdfstring{c\_isMandatory}{c\_isMandatory}}
 {\footnotesize\ttfamily \label{classCommand_a641e5155dd27a4fdf3e98574e69ce437} 
 bool Command\+::c\+\_\+is\+Mandatory\hspace{0.3cm}{\ttfamily [protected]}}
 
-Boolean if the command is mandatory or not \Hypertarget{classCommand_aed9e6d920692bae608d85639c8673337}\index{Command@{Command}!c\_name@{c\_name}}
+
+
+Indicates if the command is mandatory. 
+
+\Hypertarget{classCommand_aed9e6d920692bae608d85639c8673337}\index{Command@{Command}!c\_name@{c\_name}}
 \index{c\_name@{c\_name}!Command@{Command}}
 \doxysubsubsection{\texorpdfstring{c\_name}{c\_name}}
 {\footnotesize\ttfamily \label{classCommand_aed9e6d920692bae608d85639c8673337} 
 std\+::string Command\+::c\+\_\+name\hspace{0.3cm}{\ttfamily [protected]}}
 
-Name of the command \Hypertarget{classCommand_a306ecd3909d2b319921e0fa5818c1c69}\index{Command@{Command}!c\_nbOfArguments@{c\_nbOfArguments}}
+
+
+The primary name of the command. 
+
+\Hypertarget{classCommand_a306ecd3909d2b319921e0fa5818c1c69}\index{Command@{Command}!c\_nbOfArguments@{c\_nbOfArguments}}
 \index{c\_nbOfArguments@{c\_nbOfArguments}!Command@{Command}}
 \doxysubsubsection{\texorpdfstring{c\_nbOfArguments}{c\_nbOfArguments}}
 {\footnotesize\ttfamily \label{classCommand_a306ecd3909d2b319921e0fa5818c1c69} 
 size\+\_\+t Command\+::c\+\_\+nb\+Of\+Arguments\hspace{0.3cm}{\ttfamily [protected]}}
 
-Number of argument the command takes 
+
+
+The number of arguments the command expects. 
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

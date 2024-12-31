@@ -111,6 +111,9 @@ $(function(){initNavTree('classCommand.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 
+<p>Represents a command in the parser framework.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="Command_8h_source.html">Command.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Command:</div>
@@ -118,50 +121,72 @@ Inheritance diagram for Command:</div>
  <div class="center">
   <img src="classCommand.png" usemap="#Command_map" alt=""/>
   <map id="Command_map" name="Command_map">
-<area href="classHelpCommand.html" alt="HelpCommand" shape="rect" coords="0,56,93,80"/>
+<area href="classHelpCommand.html" title="A concrete implementation of the Command class for displaying help information." alt="HelpCommand" shape="rect" coords="0,56,93,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a86cf97057e2bee28e90ccefeca1079c7" id="r_a86cf97057e2bee28e90ccefeca1079c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86cf97057e2bee28e90ccefeca1079c7">Command</a> (const std::string &amp;<a class="el" href="#adf90b3f0915e5afeb1e8a9ba12be4c94">name</a>, const std::vector&lt; std::string &gt; &amp;<a class="el" href="#a1fa000e8c5a5db4b4ec4322098aa250d">aliases</a>, size_t nbOfArguments, const std::string &amp;<a class="el" href="#afc493f033e1b89412f07874de6752611">description</a>, bool isMandatory, bool activateImmediately)</td></tr>
+<tr class="memdesc:a86cf97057e2bee28e90ccefeca1079c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classCommand.html" title="Represents a command in the parser framework.">Command</a> object.  <br /></td></tr>
 <tr class="separator:a86cf97057e2bee28e90ccefeca1079c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa545a53d35818f9efb936daf3fa16c61" id="r_aa545a53d35818f9efb936daf3fa16c61"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa545a53d35818f9efb936daf3fa16c61">~Command</a> ()=default</td></tr>
+<tr class="memdesc:aa545a53d35818f9efb936daf3fa16c61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual destructor for <a class="el" href="classCommand.html" title="Represents a command in the parser framework.">Command</a>.  <br /></td></tr>
 <tr class="separator:aa545a53d35818f9efb936daf3fa16c61"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a760baf7456433e82703600fa73a0ac74" id="r_a760baf7456433e82703600fa73a0ac74"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a760baf7456433e82703600fa73a0ac74">setArguments</a> (const std::vector&lt; std::string &gt; &amp;args)=0</td></tr>
+<tr class="memdesc:a760baf7456433e82703600fa73a0ac74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the arguments parsed by the parser.  <br /></td></tr>
 <tr class="separator:a760baf7456433e82703600fa73a0ac74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6fd7d9bd8df8bfc881e4d6c7cd1878b7" id="r_a6fd7d9bd8df8bfc881e4d6c7cd1878b7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6fd7d9bd8df8bfc881e4d6c7cd1878b7">execute</a> ()=0</td></tr>
+<tr class="memdesc:a6fd7d9bd8df8bfc881e4d6c7cd1878b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the command's main logic.  <br /></td></tr>
 <tr class="separator:a6fd7d9bd8df8bfc881e4d6c7cd1878b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf90b3f0915e5afeb1e8a9ba12be4c94" id="r_adf90b3f0915e5afeb1e8a9ba12be4c94"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf90b3f0915e5afeb1e8a9ba12be4c94">name</a> () const</td></tr>
+<tr class="memdesc:adf90b3f0915e5afeb1e8a9ba12be4c94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the name of the command.  <br /></td></tr>
 <tr class="separator:adf90b3f0915e5afeb1e8a9ba12be4c94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc493f033e1b89412f07874de6752611" id="r_afc493f033e1b89412f07874de6752611"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc493f033e1b89412f07874de6752611">description</a> () const</td></tr>
+<tr class="memdesc:afc493f033e1b89412f07874de6752611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a formatted description of the command.  <br /></td></tr>
 <tr class="separator:afc493f033e1b89412f07874de6752611"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fa000e8c5a5db4b4ec4322098aa250d" id="r_a1fa000e8c5a5db4b4ec4322098aa250d"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::string &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fa000e8c5a5db4b4ec4322098aa250d">aliases</a> () const</td></tr>
+<tr class="memdesc:a1fa000e8c5a5db4b4ec4322098aa250d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the aliases of the command.  <br /></td></tr>
 <tr class="separator:a1fa000e8c5a5db4b4ec4322098aa250d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20bbea1957ab35dd5c81c906f741c016" id="r_a20bbea1957ab35dd5c81c906f741c016"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20bbea1957ab35dd5c81c906f741c016">isMandatoryCommand</a> () const</td></tr>
+<tr class="memdesc:a20bbea1957ab35dd5c81c906f741c016"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the command is mandatory.  <br /></td></tr>
 <tr class="separator:a20bbea1957ab35dd5c81c906f741c016"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa35dd25f37bff027626e1b02096e5f3f" id="r_aa35dd25f37bff027626e1b02096e5f3f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa35dd25f37bff027626e1b02096e5f3f">executesNow</a> () const</td></tr>
+<tr class="memdesc:aa35dd25f37bff027626e1b02096e5f3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the command is set to execute immediately after parsing.  <br /></td></tr>
 <tr class="separator:aa35dd25f37bff027626e1b02096e5f3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6feaa3ded84fb0d1828fb9cef6a56e38" id="r_a6feaa3ded84fb0d1828fb9cef6a56e38"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6feaa3ded84fb0d1828fb9cef6a56e38">nbArguments</a> () const</td></tr>
+<tr class="memdesc:a6feaa3ded84fb0d1828fb9cef6a56e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the number of arguments required by the command.  <br /></td></tr>
 <tr class="separator:a6feaa3ded84fb0d1828fb9cef6a56e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aed9e6d920692bae608d85639c8673337" id="r_aed9e6d920692bae608d85639c8673337"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed9e6d920692bae608d85639c8673337">c_name</a></td></tr>
+<tr class="memdesc:aed9e6d920692bae608d85639c8673337"><td class="mdescLeft">&#160;</td><td class="mdescRight">The primary name of the command.  <br /></td></tr>
 <tr class="separator:aed9e6d920692bae608d85639c8673337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf9ba53d7b04258e5b3c5aa6b67cc1d8" id="r_acf9ba53d7b04258e5b3c5aa6b67cc1d8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf9ba53d7b04258e5b3c5aa6b67cc1d8">c_aliases</a></td></tr>
+<tr class="memdesc:acf9ba53d7b04258e5b3c5aa6b67cc1d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">A list of aliases for the command.  <br /></td></tr>
 <tr class="separator:acf9ba53d7b04258e5b3c5aa6b67cc1d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a306ecd3909d2b319921e0fa5818c1c69" id="r_a306ecd3909d2b319921e0fa5818c1c69"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a306ecd3909d2b319921e0fa5818c1c69">c_nbOfArguments</a></td></tr>
+<tr class="memdesc:a306ecd3909d2b319921e0fa5818c1c69"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of arguments the command expects.  <br /></td></tr>
 <tr class="separator:a306ecd3909d2b319921e0fa5818c1c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae17af463efac5856b438f3caa9d4f143" id="r_ae17af463efac5856b438f3caa9d4f143"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae17af463efac5856b438f3caa9d4f143">c_description</a></td></tr>
+<tr class="memdesc:ae17af463efac5856b438f3caa9d4f143"><td class="mdescLeft">&#160;</td><td class="mdescRight">A short description of the command, displayed in the help menu.  <br /></td></tr>
 <tr class="separator:ae17af463efac5856b438f3caa9d4f143"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a641e5155dd27a4fdf3e98574e69ce437" id="r_a641e5155dd27a4fdf3e98574e69ce437"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a641e5155dd27a4fdf3e98574e69ce437">c_isMandatory</a></td></tr>
+<tr class="memdesc:a641e5155dd27a4fdf3e98574e69ce437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the command is mandatory.  <br /></td></tr>
 <tr class="separator:a641e5155dd27a4fdf3e98574e69ce437"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d6455b6cf44c696af0d283ca767f66e" id="r_a4d6455b6cf44c696af0d283ca767f66e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d6455b6cf44c696af0d283ca767f66e">c_activateImmediately</a></td></tr>
+<tr class="memdesc:a4d6455b6cf44c696af0d283ca767f66e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if the command can be executed immediately after being parsed.  <br /></td></tr>
 <tr class="separator:a4d6455b6cf44c696af0d283ca767f66e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class representing a <a class="el" href="classCommand.html">Command</a> of the parser </p><dl class="section author"><dt>Authors</dt><dd>Paul Caillé, Oregan Hardy </dd></dl>
+<div class="textblock"><p>Represents a command in the parser framework. </p>
+<p>This abstract class serves as a base for creating commands that can be parsed, validated, and executed by the parser. Each command can have aliases, a description, arguments, and specific execution behavior.</p>
+<dl class="section author"><dt>Authors</dt><dd><ul>
+<li>Paul Caillé</li>
+<li>Oregan Hardy </li>
+</ul>
+</dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a86cf97057e2bee28e90ccefeca1079c7" name="a86cf97057e2bee28e90ccefeca1079c7"></a>
@@ -202,14 +227,16 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Constructor of a <a class="el" href="classCommand.html">Command</a> </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Constructs a new <a class="el" href="classCommand.html" title="Represents a command in the parser framework.">Command</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>name of the <a class="el" href="classCommand.html">Command</a> </td></tr>
-    <tr><td class="paramname">aliases</td><td>vector of string contained in c_aliases </td></tr>
-    <tr><td class="paramname">nbOfArguments</td><td>number of argument taken by the <a class="el" href="classCommand.html">Command</a> </td></tr>
-    <tr><td class="paramname">description</td><td>description of the class, displayed by help </td></tr>
-    <tr><td class="paramname">isMandatory</td><td>if the command is mandatory </td></tr>
-    <tr><td class="paramname">activateImmediately</td><td>if the command can be executed directly when parsed </td></tr>
+    <tr><td class="paramname">name</td><td>The primary name of the command. </td></tr>
+    <tr><td class="paramname">aliases</td><td>A vector of aliases for the command. </td></tr>
+    <tr><td class="paramname">nbOfArguments</td><td>The number of arguments required by the command. </td></tr>
+    <tr><td class="paramname">description</td><td>A description of the command's functionality. </td></tr>
+    <tr><td class="paramname">isMandatory</td><td>Whether the command is mandatory. </td></tr>
+    <tr><td class="paramname">activateImmediately</td><td>Whether the command can execute directly upon parsing. </td></tr>
   </table>
   </dd>
 </dl>
@@ -238,7 +265,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Destructor of a <a class="el" href="classCommand.html">Command</a>, used by the desctructor of <a class="el" href="classParsing.html">Parsing</a> </p>
+
+<p>Virtual destructor for <a class="el" href="classCommand.html" title="Represents a command in the parser framework.">Command</a>. </p>
+<p>The <code><a class="el" href="classParsing.html" title="Class responsible for parsing command-line input, managing commands, and handling targets.">Parsing</a></code> class deletes commands when it is destroyed. </p>
 
 </div>
 </div>
@@ -257,7 +286,9 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Getter for c_aliases </p><dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; </dd></dl>
+
+<p>Retrieves the aliases of the command. </p>
+<dl class="section return"><dt>Returns</dt><dd>A constant reference to the vector of aliases. </dd></dl>
 
 </div>
 </div>
@@ -275,7 +306,10 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Getter for c_destruction </p><dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+
+<p>Retrieves a formatted description of the command. </p>
+<p>Combines the name, aliases, and description into a single string.</p>
+<dl class="section return"><dt>Returns</dt><dd>A string containing the command description. </dd></dl>
 
 </div>
 </div>
@@ -301,7 +335,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Method launched by Parser, main execution of the command </p>
+
+<p>Executes the command's main logic. </p>
+<p>This is invoked by the parser after validation. </p>
 
 <p>Implemented in <a class="el" href="classHelpCommand.html#ae937e50237b12328bfbd4526caf7f47e">HelpCommand</a>.</p>
 
@@ -321,7 +357,9 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Getter for c_activateImmediately </p><dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+<p>Checks if the command is set to execute immediately after parsing. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the command executes immediately, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -339,7 +377,9 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Getter for c_isMandatory </p><dl class="section return"><dt>Returns</dt><dd>bool </dd></dl>
+
+<p>Checks if the command is mandatory. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the command is mandatory, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -357,7 +397,9 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Getter for c_name </p><dl class="section return"><dt>Returns</dt><dd>std::string </dd></dl>
+
+<p>Retrieves the name of the command. </p>
+<dl class="section return"><dt>Returns</dt><dd>The name of the command as a string. </dd></dl>
 
 </div>
 </div>
@@ -375,7 +417,9 @@ Protected Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Getter for c_nbOfArguments </p><dl class="section return"><dt>Returns</dt><dd>std::size_t </dd></dl>
+
+<p>Retrieves the number of arguments required by the command. </p>
+<dl class="section return"><dt>Returns</dt><dd>The number of arguments as a <code>size_t</code>. </dd></dl>
 
 </div>
 </div>
@@ -401,9 +445,11 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set arguments parsed by Parser in the <a class="el" href="classCommand.html">Command</a> </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Sets the arguments parsed by the parser. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">args</td><td></td></tr>
+    <tr><td class="paramname">args</td><td>A vector of arguments to set. </td></tr>
   </table>
   </dd>
 </dl>
@@ -432,7 +478,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>If the command can be executed immediately after being parsed <a class="el" href="classCommand.html">Command</a> using <a class="el" href="classTargets.html">Targets</a> object must be at false </p>
+
+<p>Determines if the command can be executed immediately after being parsed. </p>
 
 </div>
 </div>
@@ -455,7 +502,9 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Vector of the aliases for the command, must start with "-" or "--" for long name </p>
+
+<p>A list of aliases for the command. </p>
+<p>Aliases must begin with "-" for short names; </p>
 
 </div>
 </div>
@@ -478,7 +527,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Description of the command displayed by help </p>
+
+<p>A short description of the command, displayed in the help menu. </p>
 
 </div>
 </div>
@@ -501,7 +551,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Boolean if the command is mandatory or not </p>
+
+<p>Indicates if the command is mandatory. </p>
 
 </div>
 </div>
@@ -524,7 +575,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Name of the command </p>
+
+<p>The primary name of the command. </p>
 
 </div>
 </div>
@@ -547,7 +599,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Number of argument the command takes </p>
+
+<p>The number of arguments the command expects. </p>
 
 </div>
 </div>

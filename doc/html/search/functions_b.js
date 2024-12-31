@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['targets_0',['Targets',['../classTargets.html#a4a5f59091839ef08952c52a495a45540',1,'Targets']]],
-  ['targets_1',['targets',['../classTargets.html#abd0b174f61bef8a67038f8ef3587da88',1,'Targets::targets()'],['../classParsing.html#a4cb9e27a693cb1b388eebaca00d77217',1,'Parsing::targets()']]]
+  ['setarguments_0',['setArguments',['../classCommand.html#a760baf7456433e82703600fa73a0ac74',1,'Command::setArguments()'],['../classHelpCommand.html#aeecc5db9e276e2933a3eb2497891be58',1,'HelpCommand::setArguments()']]]
 ];

@@ -105,40 +105,54 @@ $(function(){initNavTree('classParsing.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classParsing-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Parsing Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Class responsible for parsing command-line input, managing commands, and handling targets.  
+ <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Parsing_8h_source.html">Parsing.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ababaf37046057a9da442929ea74464b6" id="r_ababaf37046057a9da442929ea74464b6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ababaf37046057a9da442929ea74464b6">Parsing</a> (<a class="el" href="classTargets.html">Targets</a> &amp;<a class="el" href="#a4cb9e27a693cb1b388eebaca00d77217">targets</a>)</td></tr>
+<tr class="memdesc:ababaf37046057a9da442929ea74464b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classParsing.html" title="Class responsible for parsing command-line input, managing commands, and handling targets.">Parsing</a> object.  <br /></td></tr>
 <tr class="separator:ababaf37046057a9da442929ea74464b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb1532884f52878ba076dda01080811b" id="r_aeb1532884f52878ba076dda01080811b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb1532884f52878ba076dda01080811b">addCommand</a> (<a class="el" href="classCommand.html">Command</a> *command)</td></tr>
+<tr class="memdesc:aeb1532884f52878ba076dda01080811b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a command to the parser.  <br /></td></tr>
 <tr class="separator:aeb1532884f52878ba076dda01080811b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60be9a91e4e3b994c724473f1de68133" id="r_a60be9a91e4e3b994c724473f1de68133"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60be9a91e4e3b994c724473f1de68133">parseInput</a> (int argc, const char *argv[]) const</td></tr>
+<tr class="memdesc:a60be9a91e4e3b994c724473f1de68133"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses input arguments and processes commands and targets.  <br /></td></tr>
 <tr class="separator:a60be9a91e4e3b994c724473f1de68133"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab052502b0eef7d6a44a23ee671b44a12" id="r_ab052502b0eef7d6a44a23ee671b44a12"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab052502b0eef7d6a44a23ee671b44a12">allDescriptions</a> () const</td></tr>
-<tr class="separator:ab052502b0eef7d6a44a23ee671b44a12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a282159b8d22017890090d600da7fac15" id="r_a282159b8d22017890090d600da7fac15"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a282159b8d22017890090d600da7fac15">allCommandDescriptions</a> () const</td></tr>
+<tr class="memdesc:a282159b8d22017890090d600da7fac15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves descriptions of all commands added to the parser.  <br /></td></tr>
+<tr class="separator:a282159b8d22017890090d600da7fac15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5f2715d8c0c5d6b95c295c9fafc72c2" id="r_ad5f2715d8c0c5d6b95c295c9fafc72c2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5f2715d8c0c5d6b95c295c9fafc72c2">generateUsage</a> () const</td></tr>
+<tr class="memdesc:ad5f2715d8c0c5d6b95c295c9fafc72c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the usage string for the parser.  <br /></td></tr>
+<tr class="separator:ad5f2715d8c0c5d6b95c295c9fafc72c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2921f8119035ebbf1be0846dec80887" id="r_ab2921f8119035ebbf1be0846dec80887"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2921f8119035ebbf1be0846dec80887">hasCommand</a> (const std::string &amp;name) const</td></tr>
+<tr class="memdesc:ab2921f8119035ebbf1be0846dec80887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a specific command exists in the parser.  <br /></td></tr>
 <tr class="separator:ab2921f8119035ebbf1be0846dec80887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36ceff5207de5dba67c82caaabb0e61f" id="r_a36ceff5207de5dba67c82caaabb0e61f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36ceff5207de5dba67c82caaabb0e61f">executableName</a> () const</td></tr>
+<tr class="memdesc:a36ceff5207de5dba67c82caaabb0e61f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the name of the executable.  <br /></td></tr>
+<tr class="separator:a36ceff5207de5dba67c82caaabb0e61f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cb9e27a693cb1b388eebaca00d77217" id="r_a4cb9e27a693cb1b388eebaca00d77217"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classTargets.html">Targets</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4cb9e27a693cb1b388eebaca00d77217">targets</a> () const</td></tr>
+<tr class="memdesc:a4cb9e27a693cb1b388eebaca00d77217"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the <a class="el" href="classTargets.html" title="Represents the collection of targets for the program, such as file paths.">Targets</a> object storing parsed targets.  <br /></td></tr>
 <tr class="separator:a4cb9e27a693cb1b388eebaca00d77217"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8177a741578150b599a9153e44da384" id="r_aa8177a741578150b599a9153e44da384"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8177a741578150b599a9153e44da384">~Parsing</a> ()</td></tr>
+<tr class="memdesc:aa8177a741578150b599a9153e44da384"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor for <a class="el" href="classParsing.html" title="Class responsible for parsing command-line input, managing commands, and handling targets.">Parsing</a>.  <br /></td></tr>
 <tr class="separator:aa8177a741578150b599a9153e44da384"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:aa92b3790c31ad46adcbaa5a2c26a5f57" id="r_aa92b3790c31ad46adcbaa5a2c26a5f57"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classCommand.html">Command</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa92b3790c31ad46adcbaa5a2c26a5f57">p_commandsToParse</a></td></tr>
-<tr class="separator:aa92b3790c31ad46adcbaa5a2c26a5f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5475919174ebd04b8277faec3df1e2c5" id="r_a5475919174ebd04b8277faec3df1e2c5"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5475919174ebd04b8277faec3df1e2c5">exename</a></td></tr>
-<tr class="separator:a5475919174ebd04b8277faec3df1e2c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Class representing the command parser </p><dl class="section author"><dt>Authors</dt><dd>Paul Caillé, Oregan Hardy </dd></dl>
+<div class="textblock"><p>Class responsible for parsing command-line input, managing commands, and handling targets. </p>
+<p>This class represents a command-line parser that supports adding commands, parsing input arguments, and managing execution flow. It also validates mandatory commands and organizes the parsed targets.</p>
+<dl class="section author"><dt>Authors</dt><dd><ul>
+<li>Paul Caillé</li>
+<li>Oregan Hardy </li>
+</ul>
+</dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ababaf37046057a9da442929ea74464b6" name="ababaf37046057a9da442929ea74464b6"></a>
@@ -163,9 +177,11 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Constructor for a parser </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Constructs a <a class="el" href="classParsing.html" title="Class responsible for parsing command-line input, managing commands, and handling targets.">Parsing</a> object. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">targets</td><td></td></tr>
+    <tr><td class="paramname">targets</td><td>A reference to a <a class="el" href="classTargets.html" title="Represents the collection of targets for the program, such as file paths.">Targets</a> object where parsed targets will be stored. </td></tr>
   </table>
   </dd>
 </dl>
@@ -186,7 +202,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Destructor for <a class="el" href="classParsing.html">Parsing</a> </p>
+
+<p>Destructor for <a class="el" href="classParsing.html" title="Class responsible for parsing command-line input, managing commands, and handling targets.">Parsing</a>. </p>
+<p>Frees the memory allocated for the commands stored in the parser. </p>
 
 </div>
 </div>
@@ -205,30 +223,77 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Add a command to the parser </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Adds a command to the parser. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">command</td><td></td></tr>
+    <tr><td class="paramname">command</td><td>A pointer to the <a class="el" href="classCommand.html" title="Represents a command in the parser framework.">Command</a> to add. Must not be nullptr. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="ab052502b0eef7d6a44a23ee671b44a12" name="ab052502b0eef7d6a44a23ee671b44a12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab052502b0eef7d6a44a23ee671b44a12">&#9670;&#160;</a></span>allDescriptions()</h2>
+<a id="a282159b8d22017890090d600da7fac15" name="a282159b8d22017890090d600da7fac15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a282159b8d22017890090d600da7fac15">&#9670;&#160;</a></span>allCommandDescriptions()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::string &gt; Parsing::allDescriptions </td>
+          <td class="memname">std::vector&lt; std::string &gt; Parsing::allCommandDescriptions </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Return the description of all the commands added to the parser </p><dl class="section return"><dt>Returns</dt><dd>std::vector&lt;std::string&gt; </dd></dl>
+
+<p>Retrieves descriptions of all commands added to the parser. </p>
+<p>Generates a vector of command descriptions, including aliases and their purpose.</p>
+<dl class="section return"><dt>Returns</dt><dd>A vector of strings, each containing a command description. </dd></dl>
+
+</div>
+</div>
+<a id="a36ceff5207de5dba67c82caaabb0e61f" name="a36ceff5207de5dba67c82caaabb0e61f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36ceff5207de5dba67c82caaabb0e61f">&#9670;&#160;</a></span>executableName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Parsing::executableName </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the name of the executable. </p>
+<p>This is typically the first element in the argument vector.</p>
+<dl class="section return"><dt>Returns</dt><dd>A string containing the executable's name. </dd></dl>
+
+</div>
+</div>
+<a id="ad5f2715d8c0c5d6b95c295c9fafc72c2" name="ad5f2715d8c0c5d6b95c295c9fafc72c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5f2715d8c0c5d6b95c295c9fafc72c2">&#9670;&#160;</a></span>generateUsage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Parsing::generateUsage </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates the usage string for the parser. </p>
+<p>This string details the expected input format, including commands, arguments, and targets.</p>
+<dl class="section return"><dt>Returns</dt><dd>A string representing the usage format of the program. </dd></dl>
 
 </div>
 </div>
@@ -246,13 +311,15 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Check if the given command name is present in p_commandToParse </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Checks if a specific command exists in the parser. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td></td></tr>
+    <tr><td class="paramname">name</td><td>The name or alias of the command to check. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>boolean, if the command exist in the parser </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the command exists, <code>false</code> otherwise. </dd></dl>
 
 </div>
 </div>
@@ -274,10 +341,19 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Main method to parse command </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Parses input arguments and processes commands and targets. </p>
+<p>This is the main method for parsing command-line input. It organizes commands, validates arguments, and stores targets as needed.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">argc</td><td></td></tr>
-    <tr><td class="paramname">argv</td><td></td></tr>
+    <tr><td class="paramname">argc</td><td>The argument count (from the command line). </td></tr>
+    <tr><td class="paramname">argv</td><td>The argument vector (from the command line). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if parsing errors occur (e.g., unrecognized commands, missing arguments). </td></tr>
   </table>
   </dd>
 </dl>
@@ -298,46 +374,9 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Getter for p_targets </p><dl class="section return"><dt>Returns</dt><dd>Target </dd></dl>
 
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a5475919174ebd04b8277faec3df1e2c5" name="a5475919174ebd04b8277faec3df1e2c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5475919174ebd04b8277faec3df1e2c5">&#9670;&#160;</a></span>exename</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string Parsing::exename</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel mutable">mutable</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Name of the executable </p>
-
-</div>
-</div>
-<a id="aa92b3790c31ad46adcbaa5a2c26a5f57" name="aa92b3790c31ad46adcbaa5a2c26a5f57"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa92b3790c31ad46adcbaa5a2c26a5f57">&#9670;&#160;</a></span>p_commandsToParse</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classCommand.html">Command</a> *&gt; Parsing::p_commandsToParse</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Vector of all commands added to the parser </p>
+<p>Retrieves the <a class="el" href="classTargets.html" title="Represents the collection of targets for the program, such as file paths.">Targets</a> object storing parsed targets. </p>
+<dl class="section return"><dt>Returns</dt><dd>A constant reference to the <a class="el" href="classTargets.html" title="Represents the collection of targets for the program, such as file paths.">Targets</a> object. </dd></dl>
 
 </div>
 </div>
