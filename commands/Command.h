@@ -1,146 +1,190 @@
 //
 // Created on 29/11/2024.
-// CAILLE
-// PAUL
+// CAILLE / HARDY
+// PAUL / OREGAN
 // M1 - CL
 //
 
 #ifndef COMMAND_H
 #define COMMAND_H
+
 #include <string>
 #include <vector>
-
 
 class Parsing;
 
 /**
- * Class representing a Command of the parser
- * @authors Paul Caillé, Oregan Hardy
+ * @class Command
+ * @brief Represents a command in the parser framework.
+ *
+ * This abstract class serves as a base for creating commands that can be
+ * parsed, validated, and executed by the parser. Each command can have
+ * aliases, a description, arguments, and specific execution behavior.
+ *
+ * @authors
+ * - Paul Caillé
+ * - Oregan Hardy
  * @version 1.0.0
  */
 class Command {
 protected:
     /**
-     * Name of the command
+     * @brief The primary name of the command.
      */
     std::string c_name;
+
     /**
-     * Vector of the aliases for the command, must start with "-" or "--" for long name
+     * @brief A list of aliases for the command.
+     *
+     * Aliases must begin with "-" for short names or "--" for long names.
      */
     std::vector<std::string> c_aliases;
+
     /**
-     * Number of argument the command takes
+     * @brief The number of arguments the command expects.
      */
     size_t c_nbOfArguments;
+
     /**
-     * Description of the command displayed by help
+     * @brief A short description of the command, displayed in the help menu.
      */
     std::string c_description;
+
     /**
-     * Boolean if the command is mandatory or not
+     * @brief Indicates if the command is mandatory.
      */
     bool c_isMandatory;
+
     /**
-     * If the command can be executed immediately after being parsed
-     * Command using Targets object must be at false
+     * @brief Determines if the command can be executed immediately after being parsed.
+     *
+     * Commands that require `Targets` must set this to `false`.
      */
     bool c_activateImmediately;
 
 public:
     /**
-     * Constructor of a Command
-     * @param name name of the Command
-     * @param aliases vector of string contained in c_aliases
-     * @param nbOfArguments number of argument taken by the Command
-     * @param description description of the class, displayed by help
-     * @param isMandatory if the command is mandatory
-     * @param activateImmediately if the command can be executed directly when parsed
+     * @brief Constructs a new Command object.
+     *
+     * @param name The primary name of the command.
+     * @param aliases A vector of aliases for the command.
+     * @param nbOfArguments The number of arguments required by the command.
+     * @param description A description of the command's functionality.
+     * @param isMandatory Whether the command is mandatory.
+     * @param activateImmediately Whether the command can execute directly upon parsing.
      */
     Command(const std::string &name, const std::vector<std::string> &aliases, size_t nbOfArguments,
             const std::string &description, bool isMandatory, bool activateImmediately);
 
     /**
-     * Destructor of a Command, used by the desctructor of Parsing
+     * @brief Virtual destructor for Command.
+     *
+     * The `Parsing` class deletes commands when it is destroyed.
      */
     virtual ~Command() = default;
 
     /**
-     * Set arguments parsed by Parser in the Command
-     * @param args
+     * @brief Sets the arguments parsed by the parser.
+     *
+     * @param args A vector of arguments to set.
      */
     virtual void setArguments(const std::vector<std::string> &args) = 0;
 
     /**
-     * Method launched by Parser, main execution of the command
+     * @brief Executes the command's main logic.
+     *
+     * This is invoked by the parser after validation.
      */
     virtual void execute() = 0;
 
     /**
-     * Getter for c_name
-     * @return std::string
+     * @brief Retrieves the name of the command.
+     *
+     * @return The name of the command as a string.
      */
     const std::string &name() const;
 
     /**
-     * Getter for c_destruction
-     * @return std::string
+     * @brief Retrieves a formatted description of the command.
+     *
+     * Combines the name, aliases, and description into a single string.
+     *
+     * @return A string containing the command description.
      */
     std::string description() const;
 
     /**
-     * Getter for c_aliases
-     * @return std::vector<std::string>
+     * @brief Retrieves the aliases of the command.
+     *
+     * @return A constant reference to the vector of aliases.
      */
     const std::vector<std::string> &aliases() const;
 
     /**
-     * Getter for c_isMandatory
-     * @return bool
+     * @brief Checks if the command is mandatory.
+     *
+     * @return `true` if the command is mandatory, `false` otherwise.
      */
     bool isMandatoryCommand() const;
 
     /**
-     * Getter for c_activateImmediately
-     * @return bool
+     * @brief Checks if the command is set to execute immediately after parsing.
+     *
+     * @return `true` if the command executes immediately, `false` otherwise.
      */
     bool executesNow() const;
 
     /**
-     * Getter for c_nbOfArguments
-     * @return std::size_t
+     * @brief Retrieves the number of arguments required by the command.
+     *
+     * @return The number of arguments as a `size_t`.
      */
     std::size_t nbArguments() const;
 };
 
 /**
- * Class representing Help Command
- * @authors Paul Caillé, Oregan Hardy
+ * @class HelpCommand
+ * @brief A concrete implementation of the `Command` class for displaying help information.
+ *
+ * The `HelpCommand` displays usage instructions and a list of available commands
+ * within the parser.
+ *
+ * @authors
+ * - Paul Caillé
+ * - Oregan Hardy
  * @version 1.0.0
  */
 class HelpCommand final : public Command {
- /**
-  * Instance of Parser
-  */
- const Parsing &parser;
+    /**
+     * @brief A reference to the parser instance, used to access command data.
+     */
+    const Parsing &parser;
 
 public:
- /**
-  * Constructor for HelpCommand
-  * @param parser
-  */
- explicit HelpCommand(const Parsing &parser);
+    /**
+     * @brief Constructs a `HelpCommand` object.
+     *
+     * @param parser A reference to the parser containing the commands.
+     */
+    explicit HelpCommand(const Parsing &parser);
 
- /**
-  * Implementation of setArguments method
-  * @throws std::runtime_error if the vector is not empty
-  * @param args std::vector<std::string>>
-  */
- void setArguments(const std::vector<std::string> &args) override;
+    /**
+     * @brief Sets arguments for the command.
+     *
+     * Overrides the base class method. Throws an exception if arguments are provided,
+     * as the `HelpCommand` does not accept any arguments.
+     *
+     * @param args A vector of arguments.
+     * @throws std::runtime_error If the vector of arguments is not empty.
+     */
+    void setArguments(const std::vector<std::string> &args) override;
 
- /**
-  * Display the help message of the commands inside of Parser
-  */
- void execute() override;
+    /**
+     * @brief Executes the `HelpCommand`.
+     *
+     * Displays the help message with usage and descriptions of all commands in the parser.
+     */
+    void execute() override;
 };
 
-#endif //COMMAND_H
+#endif // COMMAND_H

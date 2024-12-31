@@ -1,7 +1,7 @@
 //
 // Created on 29/11/2024.
-// CAILLE
-// PAUL
+// CAILLE / HARDY
+// PAUL / OREGAN
 // M1 - CL
 //
 
@@ -23,11 +23,10 @@ const std::string &Command::name() const {
 
 std::string Command::description() const {
     std::string fullDescription;
-    for (size_t i = 0; i < c_aliases.size(); ++i) {
-        fullDescription += c_aliases[i];
-        if (i != c_aliases.size() - 1) {
-            fullDescription += ", ";
-        }
+    fullDescription += c_name;
+    for (const auto &c_aliase: c_aliases) {
+        fullDescription += ", ";
+        fullDescription += c_aliase;
     }
     fullDescription += " : " + c_description;
     return fullDescription;
@@ -49,36 +48,18 @@ std::size_t Command::nbArguments() const {
     return c_nbOfArguments;
 }
 
-HelpCommand::HelpCommand(const Parsing &parser) : Command("help", {"--help", "-h"},
-                                                          0, "Display this \033[4mhelp\033[0m message", false, true), parser(parser) {
+HelpCommand::HelpCommand(const Parsing &parser) : Command("--help", {"-h"},
+                                                          0, "Display this \033[4mhelp\033[0m message", false, true),
+                                                  parser(parser) {
 }
 
 void HelpCommand::execute() {
-    std::string usage;
-    usage += "Usage : " + parser.exename + " ";
-    for (const auto &command: parser.p_commandsToParse) {
-        usage += "[";
-        for (size_t i = 0; i < command->aliases().size(); ++i) {
-            usage += command->aliases()[i];
-            if (i != c_aliases.size() - 1) {
-                usage += "|";
-            }
-        }
-        if(command->nbArguments() != 0) {
-            for(int i = 0; i < command->nbArguments(); ++i) {
-                usage += " argument_" + std::to_string(i+1) ;
-            }
-        }
-        usage += "] ";
-    }
-    usage += "Targets*" ;
+    std::cout << parser.generateUsage() << std::endl;
+    std::cout << "Options:\n";
 
-    std::cout << usage << std::endl;
-    std::cout << "Options :" <<std::endl;
-
-    const auto descriptions = parser.allDescriptions();
+    const auto descriptions = parser.allCommandDescriptions();
     for (const auto &description: descriptions) {
-        std::cout <<  "\t" + description << "\n";
+        std::cout << "\t" << description << "\n";
     }
 }
 

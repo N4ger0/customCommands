@@ -1,7 +1,7 @@
 //
 // Created on 29/11/2024.
-// CAILLE
-// PAUL
+// CAILLE / HARDY
+// PAUL / OREGAN
 // M1 - CL
 //
 
@@ -13,90 +13,137 @@
 #include "../target/Targets.h"
 
 /**
- * Class representing the command parser
- * @authors Paul Caillé, Oregan Hardy
+ * @class Parsing
+ * @brief Class responsible for parsing command-line input, managing commands, and handling targets.
+ *
+ * This class represents a command-line parser that supports adding commands,
+ * parsing input arguments, and managing execution flow. It also validates mandatory
+ * commands and organizes the parsed targets.
+ *
+ * @authors
+ * - Paul Caillé
+ * - Oregan Hardy
  * @version 1.0.0
  */
 class Parsing {
     /**
-     * Targets object that were parsed
+     * @brief Reference to the Targets object that stores parsed target data.
      */
     Targets &p_targets;
 
     /**
-     * Return the command with the name in param, use hasCommand to ensure the command exist before
-     * @param name the command to find
-     * @return Command
-     */
-    Command *findCommand(const std::string &name) const;
-
-    /**
-     * Execute all commands in p_commandsToParse
-     * @deprecated
-     */
-    void executeAll() const;
-
-    /**
-     * Check if a mandatory argument is missing
-     * @param inputParts the argv array casted into std::string
-     * @return boolean, true if a mandatory argument is missing
-     */
-    bool checkMissingMandatory(const std::vector<std::string> &inputParts) const;
-
-public:
-    /**
-     * Vector of all commands added to the parser
+     * @brief Vector containing all commands added to the parser.
      */
     std::vector<Command *> p_commandsToParse;
 
     /**
-     * Name of the executable
+     * @brief Name of the executable (parsed from input).
      */
-    mutable std::string exename ;
+    mutable std::string p_exename;
 
     /**
-     * Constructor for a parser
-     * @param targets
+     * @brief Finds a command by its name or alias.
+     *
+     * This method searches for a command in the parser by comparing its name or aliases.
+     *
+     * @param name The name or alias of the command to find.
+     * @return A pointer to the matching Command, or nullptr if not found.
+     */
+    Command *findCommand(const std::string &name) const;
+
+    /**
+     * @brief Executes all commands that are not set to execute immediately.
+     *
+     * This method processes deferred commands after parsing is completed.
+     */
+    void executeAll() const;
+
+    /**
+     * @brief Checks for missing mandatory commands in the input.
+     *
+     * Iterates through the commands to ensure that all mandatory commands are present in the input.
+     *
+     * @param inputParts Vector of input arguments converted to std::string.
+     * @return `true` if a mandatory command is missing, `false` otherwise.
+     */
+    bool checkMissingMandatory(const std::vector<std::string> &inputParts) const;
+
+public:
+
+    /**
+     * @brief Constructs a Parsing object.
+     *
+     * @param targets A reference to a Targets object where parsed targets will be stored.
      */
     explicit Parsing(Targets &targets);
 
     /**
-     * Add a command to the parser
-     * @param command
+     * @brief Adds a command to the parser.
+     *
+     * @param command A pointer to the Command to add. Must not be nullptr.
      */
     void addCommand(Command *command);
 
     /**
-     * Main method to parse command
-     * @param argc
-     * @param argv
+     * @brief Parses input arguments and processes commands and targets.
+     *
+     * This is the main method for parsing command-line input. It organizes commands,
+     * validates arguments, and stores targets as needed.
+     *
+     * @param argc The argument count (from the command line).
+     * @param argv The argument vector (from the command line).
+     * @throw std::runtime_error if parsing errors occur (e.g., unrecognized commands, missing arguments).
      */
     void parseInput(int argc, const char *argv[]) const;
 
     /**
-     * Return the description of all the commands added to the parser
-     * @return std::vector<std::string>
+     * @brief Retrieves descriptions of all commands added to the parser.
+     *
+     * Generates a vector of command descriptions, including aliases and their purpose.
+     *
+     * @return A vector of strings, each containing a command description.
      */
-    std::vector<std::string> allDescriptions() const;
+    std::vector<std::string> allCommandDescriptions() const;
 
     /**
-     * Check if the given command name is present in p_commandToParse
-     * @param name
-     * @return boolean, if the command exist in the parser
+     * @brief Generates the usage string for the parser.
+     *
+     * This string details the expected input format, including commands, arguments, and targets.
+     *
+     * @return A string representing the usage format of the program.
+     */
+    std::string generateUsage() const;
+
+    /**
+     * @brief Checks if a specific command exists in the parser.
+     *
+     * @param name The name or alias of the command to check.
+     * @return `true` if the command exists, `false` otherwise.
      */
     bool hasCommand(const std::string &name) const;
 
     /**
-     * Getter for p_targets
-     * @return Target
+     * @brief Retrieves the name of the executable.
+     *
+     * This is typically the first element in the argument vector.
+     *
+     * @return A string containing the executable's name.
+     */
+    std::string executableName() const;
+
+    /**
+     * @brief Retrieves the Targets object storing parsed targets.
+     *
+     * @return A constant reference to the Targets object.
      */
     const Targets &targets() const;
 
     /**
-     * Destructor for Parsing
+     * @brief Destructor for Parsing.
+     *
+     * Frees the memory allocated for the commands stored in the parser.
      */
     ~Parsing();
 };
-
 
 #endif //PARSING_H
