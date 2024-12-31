@@ -1,0 +1,65 @@
+\doxysection{Command.\+h}
+\hypertarget{Command_8h_source}{}\label{Command_8h_source}\index{commands/Command.h@{commands/Command.h}}
+\mbox{\hyperlink{Command_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{//}}
+\DoxyCodeLine{00002\ \textcolor{comment}{//\ Created\ on\ 29/11/2024.}}
+\DoxyCodeLine{00003\ \textcolor{comment}{//\ CAILLE}}
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ PAUL}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ M1\ -\/\ CL}}
+\DoxyCodeLine{00006\ \textcolor{comment}{//}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ COMMAND\_H}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ COMMAND\_H}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classParsing}{Parsing}};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCommand_a86cf97057e2bee28e90ccefeca1079c7}{Command}}\ \{}
+\DoxyCodeLine{00022\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00026\ \ \ \ \ std::string\ \mbox{\hyperlink{classCommand_aed9e6d920692bae608d85639c8673337}{c\_name}};}
+\DoxyCodeLine{00030\ \ \ \ \ std::vector<std::string>\ \mbox{\hyperlink{classCommand_acf9ba53d7b04258e5b3c5aa6b67cc1d8}{c\_aliases}};}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{size\_t}\ \mbox{\hyperlink{classCommand_a306ecd3909d2b319921e0fa5818c1c69}{c\_nbOfArguments}};}
+\DoxyCodeLine{00038\ \ \ \ \ std::string\ \mbox{\hyperlink{classCommand_ae17af463efac5856b438f3caa9d4f143}{c\_description}};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCommand_a641e5155dd27a4fdf3e98574e69ce437}{c\_isMandatory}};}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCommand_a4d6455b6cf44c696af0d283ca767f66e}{c\_activateImmediately}};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{classCommand_a86cf97057e2bee28e90ccefeca1079c7}{Command}}(\textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classCommand_adf90b3f0915e5afeb1e8a9ba12be4c94}{name}},\ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\mbox{\hyperlink{classCommand_a1fa000e8c5a5db4b4ec4322098aa250d}{aliases}},\ \textcolor{keywordtype}{size\_t}\ nbOfArguments,}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classCommand_afc493f033e1b89412f07874de6752611}{description}},\ \textcolor{keywordtype}{bool}\ isMandatory,\ \textcolor{keywordtype}{bool}\ activateImmediately);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classCommand_aa545a53d35818f9efb936daf3fa16c61}{\string~Command}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCommand_a760baf7456433e82703600fa73a0ac74}{setArguments}}(\textcolor{keyword}{const}\ std::vector<std::string>\ \&args)\ =\ 0;}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00076\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{execute}}()\ =\ 0;}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ std::string\ \&\mbox{\hyperlink{classCommand_adf90b3f0915e5afeb1e8a9ba12be4c94}{name}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00088\ \ \ \ \ std::string\ \mbox{\hyperlink{classCommand_afc493f033e1b89412f07874de6752611}{description}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00094\ \ \ \ \ \textcolor{keyword}{const}\ std::vector<std::string>\ \&\mbox{\hyperlink{classCommand_a1fa000e8c5a5db4b4ec4322098aa250d}{aliases}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCommand_a20bbea1957ab35dd5c81c906f741c016}{isMandatoryCommand}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00106\ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCommand_aa35dd25f37bff027626e1b02096e5f3f}{executesNow}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00112\ \ \ \ \ std::size\_t\ \mbox{\hyperlink{classCommand_a6feaa3ded84fb0d1828fb9cef6a56e38}{nbArguments}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00113\ \};}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00120\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classHelpCommand_ab7d95441e38378d3e395dfacc9784d0d}{HelpCommand}}\ final\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classCommand_a86cf97057e2bee28e90ccefeca1079c7}{Command}}\ \{}
+\DoxyCodeLine{00124\ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{classParsing}{Parsing}}\ \&parser;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00131\ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classHelpCommand_ab7d95441e38378d3e395dfacc9784d0d}{HelpCommand}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classParsing}{Parsing}}\ \&parser);}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00138\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHelpCommand_aeecc5db9e276e2933a3eb2497891be58}{setArguments}}(\textcolor{keyword}{const}\ std::vector<std::string>\ \&args)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00143\ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classHelpCommand_ae937e50237b12328bfbd4526caf7f47e}{execute}}()\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00144\ \};}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//COMMAND\_H}}
+
+\end{DoxyCode}

@@ -3,11 +3,8 @@ project(customCommands)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(customCommands main.cpp
+add_library(customCommands STATIC
         commands/Command.cpp
-        commands/Command.h
         target/Targets.cpp
-        target/Targets.h
         parsing/Parsing.cpp
-        parsing/Parsing.h
 )

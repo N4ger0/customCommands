@@ -41,19 +41,13 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /home/oregan/Documents/COO/customCommands/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target customCommands
+# Object build statements for STATIC_LIBRARY target customCommands
 
 
 #############################################
 # Order-only phony target for customCommands
 
 build cmake_object_order_depends_target_customCommands: phony || .
-
-build CMakeFiles/customCommands.dir/main.cpp.o: CXX_COMPILER__customCommands_unscanned_Debug /home/oregan/Documents/COO/customCommands/main.cpp || cmake_object_order_depends_target_customCommands
-  DEP_FILE = CMakeFiles/customCommands.dir/main.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/customCommands.dir
-  OBJECT_FILE_DIR = CMakeFiles/customCommands.dir
 
 build CMakeFiles/customCommands.dir/commands/Command.cpp.o: CXX_COMPILER__customCommands_unscanned_Debug /home/oregan/Documents/COO/customCommands/commands/Command.cpp || cmake_object_order_depends_target_customCommands
   DEP_FILE = CMakeFiles/customCommands.dir/commands/Command.cpp.o.d
@@ -75,19 +69,19 @@ build CMakeFiles/customCommands.dir/parsing/Parsing.cpp.o: CXX_COMPILER__customC
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target customCommands
+# Link build statements for STATIC_LIBRARY target customCommands
 
 
 #############################################
-# Link the executable customCommands
+# Link the static library libcustomCommands.a
 
-build customCommands: CXX_EXECUTABLE_LINKER__customCommands_Debug CMakeFiles/customCommands.dir/main.cpp.o CMakeFiles/customCommands.dir/commands/Command.cpp.o CMakeFiles/customCommands.dir/target/Targets.cpp.o CMakeFiles/customCommands.dir/parsing/Parsing.cpp.o
-  FLAGS = -g
+build libcustomCommands.a: CXX_STATIC_LIBRARY_LINKER__customCommands_Debug CMakeFiles/customCommands.dir/commands/Command.cpp.o CMakeFiles/customCommands.dir/target/Targets.cpp.o CMakeFiles/customCommands.dir/parsing/Parsing.cpp.o
+  LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = CMakeFiles/customCommands.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = customCommands
-  TARGET_PDB = customCommands.dbg
+  TARGET_FILE = libcustomCommands.a
+  TARGET_PDB = customCommands.a.dbg
 
 
 #############################################
@@ -115,6 +109,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build customCommands: phony libcustomCommands.a
+
 # =============================================================================
 # Folder targets.
 
@@ -123,7 +119,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /home/oregan/Documents/COO/customCommands/cmake-build-debug
 
-build all: phony customCommands
+build all: phony libcustomCommands.a
 
 # =============================================================================
 # Built-in targets

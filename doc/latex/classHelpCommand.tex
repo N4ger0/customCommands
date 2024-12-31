@@ -1,0 +1,118 @@
+\doxysection{Help\+Command Class Reference}
+\hypertarget{classHelpCommand}{}\label{classHelpCommand}\index{HelpCommand@{HelpCommand}}
+
+
+{\ttfamily \#include $<$Command.\+h$>$}
+
+Inheritance diagram for Help\+Command\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classHelpCommand}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classHelpCommand_ab7d95441e38378d3e395dfacc9784d0d}{Help\+Command}} (const \mbox{\hyperlink{classParsing}{Parsing}} \&parser)
+\item 
+void \mbox{\hyperlink{classHelpCommand_aeecc5db9e276e2933a3eb2497891be58}{set\+Arguments}} (const std\+::vector$<$ std\+::string $>$ \&args) override
+\item 
+void \mbox{\hyperlink{classHelpCommand_ae937e50237b12328bfbd4526caf7f47e}{execute}} () override
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCommand_a86cf97057e2bee28e90ccefeca1079c7}{Command}} (const std\+::string \&\mbox{\hyperlink{classCommand_adf90b3f0915e5afeb1e8a9ba12be4c94}{name}}, const std\+::vector$<$ std\+::string $>$ \&\mbox{\hyperlink{classCommand_a1fa000e8c5a5db4b4ec4322098aa250d}{aliases}}, size\+\_\+t nb\+Of\+Arguments, const std\+::string \&\mbox{\hyperlink{classCommand_afc493f033e1b89412f07874de6752611}{description}}, bool is\+Mandatory, bool activate\+Immediately)
+\item 
+virtual \mbox{\hyperlink{classCommand_aa545a53d35818f9efb936daf3fa16c61}{\texorpdfstring{$\sim$}{\string~}\+Command}} ()=default
+\item 
+const std\+::string \& \mbox{\hyperlink{classCommand_adf90b3f0915e5afeb1e8a9ba12be4c94}{name}} () const
+\item 
+std\+::string \mbox{\hyperlink{classCommand_afc493f033e1b89412f07874de6752611}{description}} () const
+\item 
+const std\+::vector$<$ std\+::string $>$ \& \mbox{\hyperlink{classCommand_a1fa000e8c5a5db4b4ec4322098aa250d}{aliases}} () const
+\item 
+bool \mbox{\hyperlink{classCommand_a20bbea1957ab35dd5c81c906f741c016}{is\+Mandatory\+Command}} () const
+\item 
+bool \mbox{\hyperlink{classCommand_aa35dd25f37bff027626e1b02096e5f3f}{executes\+Now}} () const
+\item 
+std\+::size\+\_\+t \mbox{\hyperlink{classCommand_a6feaa3ded84fb0d1828fb9cef6a56e38}{nb\+Arguments}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classCommand}{Command}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classCommand_aed9e6d920692bae608d85639c8673337}{c\+\_\+name}}
+\item 
+std\+::vector$<$ std\+::string $>$ \mbox{\hyperlink{classCommand_acf9ba53d7b04258e5b3c5aa6b67cc1d8}{c\+\_\+aliases}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classCommand_a306ecd3909d2b319921e0fa5818c1c69}{c\+\_\+nb\+Of\+Arguments}}
+\item 
+std\+::string \mbox{\hyperlink{classCommand_ae17af463efac5856b438f3caa9d4f143}{c\+\_\+description}}
+\item 
+bool \mbox{\hyperlink{classCommand_a641e5155dd27a4fdf3e98574e69ce437}{c\+\_\+is\+Mandatory}}
+\item 
+bool \mbox{\hyperlink{classCommand_a4d6455b6cf44c696af0d283ca767f66e}{c\+\_\+activate\+Immediately}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class representing Help \doxylink{classCommand}{Command} \begin{DoxyAuthor}{Authors}
+Paul Caillé, Oregan Hardy 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classHelpCommand_ab7d95441e38378d3e395dfacc9784d0d}\index{HelpCommand@{HelpCommand}!HelpCommand@{HelpCommand}}
+\index{HelpCommand@{HelpCommand}!HelpCommand@{HelpCommand}}
+\doxysubsubsection{\texorpdfstring{HelpCommand()}{HelpCommand()}}
+{\footnotesize\ttfamily \label{classHelpCommand_ab7d95441e38378d3e395dfacc9784d0d} 
+Help\+Command\+::\+Help\+Command (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classParsing}{Parsing}} \&}]{parser}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructor for \doxylink{classHelpCommand}{Help\+Command} 
+\begin{DoxyParams}{Parameters}
+{\em parser} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classHelpCommand_ae937e50237b12328bfbd4526caf7f47e}\index{HelpCommand@{HelpCommand}!execute@{execute}}
+\index{execute@{execute}!HelpCommand@{HelpCommand}}
+\doxysubsubsection{\texorpdfstring{execute()}{execute()}}
+{\footnotesize\ttfamily \label{classHelpCommand_ae937e50237b12328bfbd4526caf7f47e} 
+void Help\+Command\+::execute (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Display the help message of the commands inside of Parser 
+
+Implements \mbox{\hyperlink{classCommand_a6fd7d9bd8df8bfc881e4d6c7cd1878b7}{Command}}.
+
+\Hypertarget{classHelpCommand_aeecc5db9e276e2933a3eb2497891be58}\index{HelpCommand@{HelpCommand}!setArguments@{setArguments}}
+\index{setArguments@{setArguments}!HelpCommand@{HelpCommand}}
+\doxysubsubsection{\texorpdfstring{setArguments()}{setArguments()}}
+{\footnotesize\ttfamily \label{classHelpCommand_aeecc5db9e276e2933a3eb2497891be58} 
+void Help\+Command\+::set\+Arguments (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Implementation of set\+Arguments method 
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::runtime\+\_\+error} & if the vector is not empty \\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+{\em args} & std\+::vector$<$std\+::string$>$\texorpdfstring{$>$}{>} \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classCommand_a760baf7456433e82703600fa73a0ac74}{Command}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+commands/\mbox{\hyperlink{Command_8h}{Command.\+h}}\item 
+commands/\mbox{\hyperlink{Command_8cpp}{Command.\+cpp}}\end{DoxyCompactItemize}
