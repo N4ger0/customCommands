@@ -11,5 +11,3 @@ add_executable(customCommands main.cpp
         parsing/Parsing.cpp
         parsing/Parsing.h
 )
-
-add_subdirectory(gtest)
